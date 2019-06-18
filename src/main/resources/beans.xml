@@ -1,0 +1,45 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+  <bean id="holaBean" class="com.inforhomex.calculador.HolaMundoImpl">
+    <property name="nombre" value="Juan Jacobo Rousseau" />
+  </bean>
+
+  <bean id="puntoBean" class="com.inforhomex.calculador.Punto">
+     <property name="x" value="12.0"/>
+     <property name="y" value="11.3"/>
+  </bean>
+
+
+  <bean id="ayudaImpresionBean" class="com.inforhomex.calculador.AyudaImpresion">
+    <property name="impresora" ref="impresoraDoc" />
+  </bean>
+  
+  <bean id="impresoraDoc" class="com.inforhomex.calculador.ImprimeDOC" />
+  <bean id="impresoraPdf" class="com.inforhomex.calculador.ImprimePDF" />
+
+  <bean id="jugadorBean" class="com.inforhomex.calculador.Jugador">
+  <property name="equipo" ref="fcChivas"/>
+  </bean>
+
+  <bean id="fcAmerica" class="com.inforhomex.calculador.FCAmerica"/>
+  <bean id="fcChivas" class="com.inforhomex.calculador.FCChivas"/>
+
+  <bean id="medidorBean" class="com.inforhomex.calculador.Medidor">
+  <property name="calculo" ref="imcBean"/>
+  <property name="x" value="55.0"/>
+  <property name="y" value="1.55"/>
+  </bean>
+
+  <bean id="imcBean" class="com.inforhomex.calculador.IMC"/>
+  <bean id="pulsacionesBean" class="com.inforhomex.calculador.Pulsaciones"/>
+
+  <context:component-scan base-package="com.inforhomex.calculador" />
+  
+
+</beans>
