@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Service("mensajesServicioImpl")
 public class MensajesServicioImpl implements MensajesServicio{
@@ -12,8 +14,6 @@ public class MensajesServicioImpl implements MensajesServicio{
     @Qualifier("mensajesRepository")
     private MensajesRepository mensajesRepository;
 
-
-    
     @Override 
     public List<Mensajes> getTodo(){
         List<Mensajes> mensajes = mensajesRepository.findAll();
@@ -22,5 +22,12 @@ public class MensajesServicioImpl implements MensajesServicio{
         }else{
             return null;
         }
+    }
+
+    @Override 
+    public Mensajes getMensaje(String idioma){
+        List<Mensajes> mensajes = mensajesRepository.findAll();
+        Mensajes mensaje = mensajes.stream().filter(m -> m.idioma.equals(idioma)).collect(Collectors.toList()).get(0);
+        return mensaje;
     }
 }

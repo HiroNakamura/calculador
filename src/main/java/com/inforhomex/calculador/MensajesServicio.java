@@ -6,4 +6,5 @@ import java.util.List;
 @Service("mensajesServicio")
 public interface MensajesServicio{
     public abstract List<Mensajes> getTodo();
+    public abstract Mensajes getMensaje(String idioma);
 }

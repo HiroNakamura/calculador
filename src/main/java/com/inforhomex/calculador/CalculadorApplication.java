@@ -45,6 +45,8 @@ public class CalculadorApplication {
 		List<Mensajes> mensajes = mensajesServicio.getTodo();
 		System.out.println("Mensajes:");
 		mensajes.forEach(System.out::println);
+		System.out.println("Español: "+mensajesServicio.getMensaje("es_ES").mensaje
+		+"\nInglés: "+mensajesServicio.getMensaje("en_EN").mensaje);
 	}
 
 	public static void testN(){
