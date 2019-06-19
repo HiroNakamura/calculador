@@ -17,8 +17,8 @@ import java.util.List;
 @SpringBootApplication
 public class CalculadorApplication {
 
-	@Autowired
-	private MensajesServicio mensajesServicio;
+	//@Autowired
+	//private MensajesServicio mensajesServicio;
 
 	public static void main(String[] args) {
 		//SpringApplication.run(CalculadorApplication.class, args);
@@ -40,7 +40,11 @@ public class CalculadorApplication {
 	}
 
 	public static void testO(){
-		
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		MensajesServicioImpl mensajesServicio = (MensajesServicioImpl) context.getBean("mensajesServicioBean");
+		List<Mensajes> mensajes = mensajesServicio.getTodo();
+		System.out.println("Mensajes:");
+		mensajes.forEach(System.out::println);
 	}
 
 	public static void testN(){
