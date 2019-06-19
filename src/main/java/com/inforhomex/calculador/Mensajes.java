@@ -1,7 +1,9 @@
 package com.inforhomex.calculador;
 
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.Document;
+ 
+@Document(collection = "mensajes")
 public class Mensajes{
 
     @Id

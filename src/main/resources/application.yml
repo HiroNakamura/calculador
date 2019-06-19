@@ -2,3 +2,26 @@
 banner:
   charset: UTF-8
   location: banner.txt
+
+#MONGO DB
+spring: 
+  data.mongodb:
+    host: localhost
+    mongodb:
+      port: 27017
+    database: mensajes
+
+#spring:
+#  data.mongodb:
+#    host: localhost
+#    port: 27017
+#    uri: mongodb://localhost/mensajes
+#    database: mensajes
+#    authentication-database:
+#    username: 
+#    password:
+#    repositories.enabled: true
+#    autoconfigure:
+#      exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+
+

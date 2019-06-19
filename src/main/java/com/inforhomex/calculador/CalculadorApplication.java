@@ -9,10 +9,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 
 @SpringBootApplication
 public class CalculadorApplication {
+
+	@Autowired
+	private MensajesServicio mensajesServicio;
 
 	public static void main(String[] args) {
 		//SpringApplication.run(CalculadorApplication.class, args);
@@ -33,8 +39,22 @@ public class CalculadorApplication {
 		testO();
 	}
 
-	static void testO(){
+	public static void testO(){
+		CalculadorApplication calculador = new CalculadorApplication();
+		List<Mensajes> mensajes = null;
+		try{
+			System.out.println("Recopilando datos...");
+			mensajes = calculador.mensajesServicio.getTodo();
+			System.out.println("Esto no se vera...");
+		}catch(Exception ex){
+			System.err.println("Ha ocurrido una excepcion: "+ex.toString()
+			+"\nMensaje: "+ex.getMessage()
+			+"\nCausa: "+ex.getCause());
+			ex.printStackTrace();
+		}
 		
+		//System.out.println("Mensaje encontrado: \n");
+		//mensajes.forEach(System.out::println);
 	}
 
 	public static void testN(){
