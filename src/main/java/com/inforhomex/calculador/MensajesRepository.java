@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("mensajesRepository")
 public interface MensajesRepository extends MongoRepository<Mensajes, String> {
     
 }

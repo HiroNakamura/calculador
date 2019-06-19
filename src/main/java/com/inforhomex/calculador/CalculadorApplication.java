@@ -40,21 +40,7 @@ public class CalculadorApplication {
 	}
 
 	public static void testO(){
-		CalculadorApplication calculador = new CalculadorApplication();
-		List<Mensajes> mensajes = null;
-		try{
-			System.out.println("Recopilando datos...");
-			mensajes = calculador.mensajesServicio.getTodo();
-			System.out.println("Esto no se vera...");
-		}catch(Exception ex){
-			System.err.println("Ha ocurrido una excepcion: "+ex.toString()
-			+"\nMensaje: "+ex.getMessage()
-			+"\nCausa: "+ex.getCause());
-			ex.printStackTrace();
-		}
 		
-		//System.out.println("Mensaje encontrado: \n");
-		//mensajes.forEach(System.out::println);
 	}
 
 	public static void testN(){
