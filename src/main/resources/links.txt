@@ -1,2 +1,23 @@
 Sitios por ver:
 
+
+Mongo DB 
+http://blog.marcosbarbero.com/multiple-mongodb-connectors-in-spring-boot/
+https://stackoverflow.com/questions/23515295/spring-boot-and-how-to-configure-connection-details-to-mongodb
+
+Configuring Spring Boot for MongoDB
+https://springframework.guru/configuring-spring-boot-for-mongo/
+
+REST API: Java Spring Boot and MongoDB
+https://www.codementor.io/gtommee97/rest-api-java-spring-boot-and-mongodb-j7nluip8d
+
+Spring Boot + Spring Data MongoDB example
+https://www.mkyong.com/spring-boot/spring-boot-spring-data-mongodb-example/
+
+Spring 4 MongoDB Repository Example
+http://www.technicalkeeda.com/spring-tutorials/spring-4-mongodb-repository-example
+
+
+
+Spring Data MongoDB: Acceso a datos – Cómo construir microservicios con Spring Boot (III)
+http://www.robertocrespo.net/kaizen/implementar-microservicios-spring-boot-iii-acceso-datos-mongodb-data/
