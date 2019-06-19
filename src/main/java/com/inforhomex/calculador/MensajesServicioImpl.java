@@ -30,4 +30,13 @@ public class MensajesServicioImpl implements MensajesServicio{
         Mensajes mensaje = mensajes.stream().filter(m -> m.idioma.equals(idioma)).collect(Collectors.toList()).get(0);
         return mensaje;
     }
+
+    @Override 
+    public void crearMensaje(String idioma, String mensaje){
+        Mensajes mensajes = new Mensajes();
+        mensajes.idioma = idioma;
+        mensajes.mensaje = mensaje;
+        this.mensajesRepository.save(mensajes);
+        System.out.println("Mensaje creado {idioma: "+idioma+", mensaje: "+mensaje+"}");
+    }
 }
