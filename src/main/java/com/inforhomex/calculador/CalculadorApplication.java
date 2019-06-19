@@ -29,7 +29,12 @@ public class CalculadorApplication {
 		//testK();
 		//testL();
 		//testM();
-		testN();
+		//testN();
+		testO();
+	}
+
+	static void testO(){
+		
 	}
 
 	public static void testN(){
