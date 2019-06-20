@@ -10,6 +10,20 @@ spring:
     mongodb:
       port: 27017
     database: mensajes
+#POSTGRESQL
+  jpa: 
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/auditor
+    username: postgres
+    password: 5432
+
 
 #spring:
 #  data.mongodb:
