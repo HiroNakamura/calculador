@@ -13,11 +13,11 @@ spring:
 #POSTGRESQL
   jpa: 
     generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/auditor
