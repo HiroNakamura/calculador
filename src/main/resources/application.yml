@@ -1,28 +1,28 @@
 #BANNER
-banner:
-  charset: UTF-8
-  location: banner.txt
+#banner:
+#  charset: UTF-8
+#  location: banner.txt
 
 #MONGO DB
-spring: 
-  data.mongodb:
-    host: localhost
-    mongodb:
-      port: 27017
-    database: mensajes
+#spring: 
+#  data.mongodb:
+#    host: localhost
+#    mongodb:
+#      port: 27017
+#    database: mensajes
 #POSTGRESQL
-  jpa: 
-    generate-ddl: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/auditor
-    username: postgres
-    password: 5432
+#  jpa: 
+#    generate-ddl: true
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/auditor
+#    username: postgres
+#    password: 5432
 
 
 #spring:
@@ -37,5 +37,3 @@ spring:
 #    repositories.enabled: true
 #    autoconfigure:
 #      exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
-
-
