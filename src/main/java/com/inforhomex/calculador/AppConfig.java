@@ -70,5 +70,10 @@ public class AppConfig{
         return new AdministradorImplB();
     }
 
+    @Bean(name="contenedorBean")
+    public ContenedorCaja contenedor(){
+        return new ContenedorCaja();
+    }
+
    
 }

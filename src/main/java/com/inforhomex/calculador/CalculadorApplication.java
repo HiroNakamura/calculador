@@ -37,7 +37,16 @@ public class CalculadorApplication {
 		//testM();
 		//testN();
 		//testO();
-		testP();
+		//testP();
+		testQ();
+	}
+
+	public static void testQ(){
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		ContenedorCaja contenedorCaja= (ContenedorCaja) context.getBean("contenedorBean");
+		contenedorCaja.setCaja(new CajaImpl());
+		contenedorCaja.abrir();
+		contenedorCaja.cerrar();
 	}
 
 	public static void testP(){
