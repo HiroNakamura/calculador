@@ -47,7 +47,7 @@ public class CalculadorApplication {
 		mensajes.forEach(System.out::println);
 		System.out.println("\nEspañol: "+mensajesServicio.getMensaje("es_ES").mensaje
 		+"\nInglés: "+mensajesServicio.getMensaje("en_EN").mensaje);
-		mensajesServicio.crearMensaje("pt_PT","Olá Mundo");
+		//mensajesServicio.crearMensaje("pt_PT","Olá Mundo");
 	}
 
 	public static void testN(){
