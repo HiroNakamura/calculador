@@ -41,7 +41,11 @@ public class CalculadorApplication {
 	}
 
 	public static void testP(){
-		
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		Administrador a= (AdministradorImplA) context.getBean("adminABean");
+		System.out.println(a.getFecha());
+		Administrador b= (AdministradorImplB) context.getBean("adminBBean");
+		System.out.println(b.getFecha());
 	}
 
 	public static void testO(){

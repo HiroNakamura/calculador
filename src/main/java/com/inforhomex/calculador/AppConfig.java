@@ -60,5 +60,15 @@ public class AppConfig{
         return mongoTemplate;
     }
 
+    @Bean(name="adminABean")
+    public Administrador adminA(){
+        return new AdministradorImplA();
+    }
+
+    @Bean(name="adminBBean")
+    public Administrador adminB(){
+        return new AdministradorImplB();
+    }
+
    
 }
