@@ -36,7 +36,12 @@ public class CalculadorApplication {
 		//testL();
 		//testM();
 		//testN();
-		testO();
+		//testO();
+		testP();
+	}
+
+	public static void testP(){
+		
 	}
 
 	public static void testO(){
@@ -47,7 +52,7 @@ public class CalculadorApplication {
 		mensajes.forEach(System.out::println);
 		System.out.println("\nEspañol: "+mensajesServicio.getMensaje("es_ES").mensaje
 		+"\nInglés: "+mensajesServicio.getMensaje("en_EN").mensaje);
-		//mensajesServicio.crearMensaje("pt_PT","Olá Mundo");
+		mensajesServicio.crearMensaje("pt_PT","Olá Mundo");
 	}
 
 	public static void testN(){
