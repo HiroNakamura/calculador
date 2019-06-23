@@ -14,7 +14,7 @@ public class CursoRestController{
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
 	public String index(){
-		return new String("Hola, mundo desde una aplicación REST");
+		return new String("Bienvenidos al curso Spring boot, MongoDb y Javascript");
 	}
 
 }
