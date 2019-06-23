@@ -11,6 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.beans.factory.annotation.Autowired;
 
+import com.inforhomex.calculador.service.Administrador;
+import com.inforhomex.calculador.service.impl.AdministradorImplA;
+import com.inforhomex.calculador.service.impl.AdministradorImplB;
+
+
 import java.util.List;
 
 

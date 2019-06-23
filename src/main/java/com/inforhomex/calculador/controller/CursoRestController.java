@@ -19,4 +19,6 @@ public class CursoRestController{
 		return new String(LocalDateTime.now()+"; Bienvenidos al curso Spring Boot, MongoDb y Javascript");
 	}
 
+	
+
 }

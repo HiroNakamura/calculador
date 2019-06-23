@@ -1,5 +1,6 @@
-package com.inforhomex.calculador;
+package com.inforhomex.calculador.service.impl;
 
+import com.inforhomex.calculador.service.Administrador;
 import java.time.LocalDateTime;
 
 public class AdministradorImplB implements Administrador{
