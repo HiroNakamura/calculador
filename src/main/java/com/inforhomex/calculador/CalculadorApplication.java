@@ -19,7 +19,7 @@ public class CalculadorApplication {
 
 
 	public static void main(String[] args) {
-		//SpringApplication.run(CalculadorApplication.class, args);
+		SpringApplication.run(CalculadorApplication.class, args);
 		//testA(args);
 		//testB();
 		//testC();
@@ -37,7 +37,7 @@ public class CalculadorApplication {
 		//testO();
 		//testP();
 		//testQ();
-		testR();
+		//testR();
 	}
 
 	public static void testR(){
