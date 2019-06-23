@@ -36,7 +36,12 @@ public class CalculadorApplication {
 		//testN();
 		//testO();
 		//testP();
-		testQ();
+		//testQ();
+		testR();
+	}
+
+	public static void testR(){
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	}
 
 	public static void testQ(){

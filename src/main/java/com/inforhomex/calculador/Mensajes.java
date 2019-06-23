@@ -18,6 +18,22 @@ public class Mensajes{
         this.idioma = idioma;
         this.mensaje = mensaje;
     }
+
+    public String getIdioma(){
+        return idioma;
+    }
+
+    public void setIdioma(String idioma){
+        this.idioma = idioma;
+    }
+
+    public String getMensaje(){
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje){
+        this.mensaje = mensaje;
+    }
     
     @Override
     public String toString() {
