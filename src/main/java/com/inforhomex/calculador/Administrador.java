@@ -1,4 +1,4 @@
-package com.inforhomex.calculador.service;
+package com.inforhomex.calculador;
 
 public interface Administrador{
     public abstract String getFecha();

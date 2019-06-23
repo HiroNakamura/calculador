@@ -4,6 +4,8 @@ package com.inforhomex.calculador.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+import com.inforhomex.calculador.Mensajes;
+
 @Repository("mensajesRepository")
 public interface MensajesRepositoryRest extends MongoRepository<Mensajes, String> {
     

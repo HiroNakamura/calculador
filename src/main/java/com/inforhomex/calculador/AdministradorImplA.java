@@ -1,6 +1,5 @@
-package com.inforhomex.calculador.service.impl;
+package com.inforhomex.calculador;
 
-import com.inforhomex.calculador.service.Administrador;
 import java.util.Date;
 
 public class AdministradorImplA implements Administrador {

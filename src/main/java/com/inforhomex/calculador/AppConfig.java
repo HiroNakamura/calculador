@@ -10,9 +10,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 //import org.springframework.data.mongodb.core.MongoTemplate;
 import com.mongodb.MongoClient;
-import com.inforhomex.calculador.service.Administrador;
-import com.inforhomex.calculador.service.impl.AdministradorImplA;
-import com.inforhomex.calculador.service.impl.AdministradorImplB;
 
 
 @Configuration
