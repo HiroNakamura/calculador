@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/curso")
-public class CursoController{
+public class CursoRestController{
 
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
