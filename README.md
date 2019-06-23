@@ -1,7 +1,9 @@
-# Calculador: Serie de ejercicios en Spring Boot
+# Calculador: Serie de ejercicios en Spring Boot (ahora es un proyecto REST)
 
 
-![Spring Boot con Maven](https://codemonkeyjunior.files.wordpress.com/2019/01/maven-java-logo.png)
+![Spring Boot con Maven](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1280px-Spring_Framework_Logo_2018.svg.png)
+
+
 
 
 ## Es necesario contar con Maven instalado
