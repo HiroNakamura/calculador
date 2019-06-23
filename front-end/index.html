@@ -12,9 +12,10 @@
 </head>
 <body>
   <h1></h1>
-
+  <p></p>
   <script>
 	  const h1 = document.getElementsByTagName("h1")[0];
+	  const p1 = document.getElementsByTagName("p")[0];
 	  var Test = {
 		  init: function(){
 			  fetch('http://localhost:8090/curso/index')
@@ -22,7 +23,8 @@
 				  return response.text();
 				})
 			  .then(function(texto) {
-			  h1.textContent = texto;
+				  h1.textContent = texto.split(";")[1];
+				  p1.textContent = texto.split(";")[0]
 			});  
 		  }
 	  };

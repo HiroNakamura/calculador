@@ -16,7 +16,7 @@ public class CursoRestController{
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
 	public String index(){
-		return new String(LocalDateTime.now()+"Bienvenidos al curso Spring boot, MongoDb y Javascript");
+		return new String(LocalDateTime.now()+"; Bienvenidos al curso Spring Boot, MongoDb y Javascript");
 	}
 
 }
