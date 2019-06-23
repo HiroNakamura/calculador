@@ -42,6 +42,11 @@ public class CalculadorApplication {
 
 	public static void testR(){
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		MensajesServicioImpl mensajesServicio = (MensajesServicioImpl) context.getBean("mensajesServicioBean");
+		Mensajes mensaje = mensajesServicio.getMensaje("es_ES");
+		System.out.println("Id: "+mensaje.getId());
+		System.out.println("Idioma: "+mensaje.getIdioma());
+		System.out.println("Mensaje: "+mensaje.getMensaje());
 	}
 
 	public static void testQ(){

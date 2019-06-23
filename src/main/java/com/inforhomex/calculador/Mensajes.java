@@ -19,6 +19,10 @@ public class Mensajes{
         this.mensaje = mensaje;
     }
 
+    public String getId(){
+        return id;
+    }
+
     public String getIdioma(){
         return idioma;
     }
