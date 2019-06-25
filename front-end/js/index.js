@@ -5,6 +5,19 @@ var idiomas = "";
 var valores = "";
 var mensajes = ""; 
 
+function idioma(lang){
+    var retorno = '';
+    switch(lang){
+        case 'es_ES': retorno = "Español";break;
+        case 'en_EN': retorno = "Inglés";break;
+        case 'de_DE': retorno = "Alemán";break;
+        case 'pt_PT': retorno = "Portugues";break;
+        case 'fr_FR': retorno = "Franceś";break;
+        default: retorno = "No especificado";break;
+    }
+    return retorno;
+}
+
 var Test = {
     init: function(){
         
@@ -25,7 +38,7 @@ var Test = {
             for(var dato in myJson){
                 console.log("Idioma: ",myJson[dato].idioma);
                 console.log("Mensaje: ",myJson[dato].mensaje);
-                mensajes += "<br/>"+myJson[dato].idioma+ "  : "+myJson[dato].mensaje;
+                mensajes += "<br/>"+idioma(myJson[dato].idioma)+ "  : "+myJson[dato].mensaje;
             }
             principal.innerHTML = mensajes;
         });
