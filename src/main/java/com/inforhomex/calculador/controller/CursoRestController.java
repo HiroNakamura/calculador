@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,6 +32,13 @@ public class CursoRestController{
 	@GetMapping("/mensajes")
 	public List<Mensajes> getMensajes(){
 		return mensajesServicioImpl.getTodo();
+	}
+
+	//http://localhost:8090/curso/mensaje/pt_PT
+	@GetMapping("/mensaje/{idioma}")
+	public Mensajes getMensajeOne(@PathVariable("idioma") String idioma){
+		System.out.println("Idioma: "+idioma);
+		return mensajesServicioImpl.getMensaje(idioma);
 	}
 
 }
