@@ -22,3 +22,27 @@ $ mvn clean install
 $ mvn spring-boot:run
 ```
 
+
+### REST
+
+
+**Abrir navegador en:**
+
+http://localhost:8090/curso/index
+
+
+### Front-end Javascript
+
+**Abrir navegador en:**
+
+Usando http-server 
+
+```
+$ http-server front-end/
+```
+
+http://localhost:8080
+
+
+
+
