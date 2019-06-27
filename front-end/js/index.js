@@ -41,11 +41,14 @@ var Test = {
             return response.json();
         })
         .then(function(myJson){
+            var cont = 0;
             for(var dato in myJson){
                 console.log("Idioma: ",myJson[dato].idioma);
                 console.log("Mensaje: ",myJson[dato].mensaje);
                 mensajes += "<br/>"+idioma(myJson[dato].idioma)+ "  : "+myJson[dato].mensaje;
+                ++cont;
             }
+            console.log("Tamaño: "+cont);
             principal.innerHTML = mensajes;
         }).catch(function(error){
             h1.textContent = 'Aún no hay conexión';
