@@ -1,3 +1,4 @@
+const body = document.getElementsByTagName("body")[0];
 const h1 = document.getElementsByTagName("h1")[0];
 const p1 = document.getElementsByTagName("p")[0];
 const principal = document.querySelector("#principal");
@@ -27,7 +28,12 @@ var Test = {
         })
         .then(function(texto) {
             h1.textContent = texto.split(";")[1];
-            p1.textContent = texto.split(";")[0]
+            p1.textContent = texto.split(";")[0];
+            body.style.backgroundColor = "orange";
+        }).catch(function(error){
+            h1.textContent = 'Aún no hay conexión';
+            p1.textContent = 'Disculpa las molestias';
+            body.style.backgroundColor = "gray";
         });  
 
         fetch("http://localhost:8090/curso/mensajes")
@@ -41,6 +47,9 @@ var Test = {
                 mensajes += "<br/>"+idioma(myJson[dato].idioma)+ "  : "+myJson[dato].mensaje;
             }
             principal.innerHTML = mensajes;
+        }).catch(function(error){
+            h1.textContent = 'Aún no hay conexión';
+            p1.textContent = 'Disculpa las molestias';
         });
 
 
