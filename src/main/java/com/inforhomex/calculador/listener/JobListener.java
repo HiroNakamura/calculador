@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.inforhomex.calculador.tutorial.processor.PersonaItemProcessor;
-import com.inforhomex.calculador.tutorial.model.Persona;
+import com.inforhomex.calculador.processor.PersonaItemProcessor;
+import com.inforhomex.calculador.model.Persona;
 
 
 @Component

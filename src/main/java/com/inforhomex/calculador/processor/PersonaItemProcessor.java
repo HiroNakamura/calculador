@@ -1,6 +1,6 @@
 package com.inforhomex.calculador.processor;
 
-import com.inforhomex.calculador.tutorial.model.Persona;
+import com.inforhomex.calculador.model.Persona;
 import org.springframework.batch.item.ItemProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

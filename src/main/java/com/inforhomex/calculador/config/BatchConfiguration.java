@@ -21,9 +21,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import org.springframework.batch.item.file.FlatFileItemReader;
 
-import com.inforhomex.calculador.tutorial.listener.JobListener;
-import com.inforhomex.calculador.tutorial.model.Persona;
-import com.inforhomex.calculador.tutorial.processor.PersonaItemProcessor;
+import com.inforhomex.calculador.listener.JobListener;
+import com.inforhomex.calculador.model.Persona;
+import com.inforhomex.calculador.processor.PersonaItemProcessor;
 
 
 @Configuration
