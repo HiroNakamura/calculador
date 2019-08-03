@@ -1,0 +1,22 @@
+package com.inforhomex.calculador.batch;
+
+import com.inforhomex.springforlotes.entity.Empleado;
+import com.inforhomex.springforlotes.repository.EmpleadoRepository;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class DBWriter implements ItemWriter<Empleado>{
+    
+    @Autowired
+    private EmpleadoRepository empleadoRepository;
+    
+    @Override
+    public void write(List<? extends Empleado> empleados) throws Exception {
+        System.out.println("Datos guardados para Empleado " + empleados);
+        empleadoRepository.saveAll(empleados);
+    }
+}
