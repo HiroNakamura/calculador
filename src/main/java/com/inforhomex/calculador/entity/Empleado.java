@@ -1,4 +1,4 @@
-package com.inforhomex.springforlotes.entity;
+package com.inforhomex.calculador.entity;
 
 import java.io.Serializable;
 
