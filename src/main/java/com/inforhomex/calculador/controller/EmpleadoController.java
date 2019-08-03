@@ -1,4 +1,4 @@
-package com.inforhomex.springforlotes.controller;
+package com.inforhomex.calculador.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
