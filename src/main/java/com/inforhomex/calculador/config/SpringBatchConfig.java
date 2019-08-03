@@ -1,4 +1,4 @@
-package com.inforhomex.springforlotes.config;
+package com.inforhomex.calculador.config
 
 
 import com.inforhomex.springforlotes.entity.Empleado;
