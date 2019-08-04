@@ -1,7 +1,7 @@
 package com.inforhomex.calculador.config
 
 
-import com.inforhomex.springforlotes.entity.Empleado;
+import com.inforhomex.calculador.entity.Empleado;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
