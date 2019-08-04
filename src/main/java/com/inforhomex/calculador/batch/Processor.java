@@ -1,6 +1,6 @@
 package com.inforhomex.calculador.batch;
 
-import com.inforhomex.springforlotes.entity.Empleado;
+import com.inforhomex.calculador.entity.Empleado;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
