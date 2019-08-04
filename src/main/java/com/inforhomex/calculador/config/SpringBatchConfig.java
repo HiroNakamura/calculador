@@ -1,4 +1,4 @@
-package com.inforhomex.calculador.config
+package com.inforhomex.calculador.config;
 
 
 import com.inforhomex.calculador.entity.Empleado;
