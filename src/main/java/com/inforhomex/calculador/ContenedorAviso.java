@@ -8,4 +8,9 @@ public class ContenedorAviso{
         this.aviso = aviso;
     }
 
+    
+    public Aviso getAviso() {
+        return aviso;
+    } 
+
 }

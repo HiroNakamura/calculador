@@ -19,7 +19,7 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import org.springframework.batch.item.file.FlatFileItemReader;
+//import org.springframework.batch.item.file.FlatFileItemReader;
 
 import com.inforhomex.calculador.listener.JobListener;
 import com.inforhomex.calculador.model.Persona;
