@@ -44,8 +44,19 @@ $ http-server front-end/
 http://localhost:8080
 
 
-Spring_Framework->Spring_Batch:Crear aplicaciones Batch
-Spring_Batch->Spring_Framework:Crear todo tipo de aplicaciones
+### Correr el batch
+````
+$ mvn spring-boot:run
+```
+
+**Ir a **
+
+http://localhost:8090/batch/empleados
+
+
+#### Spring_Framework->Spring_Batch:Crear aplicaciones Batch
+
+#### Spring_Batch->Spring_Framework:Crear todo tipo de aplicaciones
 
 
 
