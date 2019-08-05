@@ -50,7 +50,7 @@ http://localhost:8080
 $ mvn spring-boot:run
 ```
 
-**Ir a **
+**Ir a**
 
 http://localhost:8090/batch/empleados
 
