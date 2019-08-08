@@ -12,7 +12,6 @@ public class Persona{
 	}
 
 	public Persona(String nombre, String apellido, String telefono){
-		super();
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.telefono=telefono;

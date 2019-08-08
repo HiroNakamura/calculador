@@ -52,7 +52,7 @@ public class BatchConfiguration{
 	}
 
 	@Bean
-	public PersonaItemProcessor processor(){
+	public PersonaItemProcessor procesesor(){
 		return new PersonaItemProcessor();
 	}
 
@@ -85,7 +85,7 @@ public class BatchConfiguration{
 		return stepBuilderFactory
 		.get("step1").<Persona,Persona>chunk(11)
 		.reader(reader())
-		.processor(processor())
+		.processor(procesesor())
 		.writer(writer)
 		.build();
 	}
