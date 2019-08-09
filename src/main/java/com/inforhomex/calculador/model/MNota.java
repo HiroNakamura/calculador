@@ -1,8 +1,9 @@
 package com.inforhomex.calculador.model;
 
 import com.inforhomex.calculador.entity.Nota;
+import java.io.Serializable;
 
-public class MNota implements java.io.Serializable{
+public class MNota implements Serializable{
     
     private static final long serialVersionUID = 19L;
 
