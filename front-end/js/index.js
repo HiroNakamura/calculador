@@ -56,6 +56,17 @@ var Test = {
         });
 
 
+        fetch('http://localhost:8090/curso/notas').then(response => response.json())
+        .then(notas =>{
+            for(var nota in notas){
+                console.log('Titulo: ',notas[nota].titulo);
+            }
+        })
+        .catch(e=>{
+            console.error("Ha ocurrido un error en el servidor");
+        })
+
+
     }
 };
 window.addEventListener("load",Test.init);
