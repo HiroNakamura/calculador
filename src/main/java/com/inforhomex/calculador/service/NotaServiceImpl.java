@@ -35,7 +35,7 @@ public class NotaServiceImpl implements INotaService{
     @Override
     @Transactional
     public MNota crearNota(Nota nota){
-        MNota mnota = New MNota(notaRepository.save(nota));
+        MNota mnota = new MNota(notaRepository.save(nota));
         return mnota;
     }
     
