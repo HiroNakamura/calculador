@@ -2,7 +2,6 @@ package com.inforhomex.calculador.controller;
 
 import com.inforhomex.calculador.model.MNota;
 import com.inforhomex.calculador.service.NotaServiceImpl;
-import com.inforhomex.calculador.entity.Nota;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
