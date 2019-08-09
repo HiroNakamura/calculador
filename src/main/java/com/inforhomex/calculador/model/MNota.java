@@ -2,8 +2,9 @@ package com.inforhomex.calculador.model;
 
 import com.inforhomex.calculador.entity.Nota;
 import java.io.Serializable;
+import java.util.Comparator;
 
-public class MNota implements Serializable{
+public class MNota implements Serializable,Comparator<MNota>,Comparable<MNota>{
     
     private static final long serialVersionUID = 19L;
 
@@ -59,6 +60,16 @@ public class MNota implements Serializable{
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+
+    @Override
+    public int compareTo(MNota nota) {
+        return this.titulo.compareTo(nota.titulo);
+    }
+
+    @Override
+    public int compare(MNota nota1, MNota nota2) {
+        return Long.compare(nota1.getId() , nota2.getId());
     }
 
     @Override

@@ -7,10 +7,11 @@ import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.io.Serializable;
+import java.util.Comparator;
 
 @Entity(name="Nota")
 @Table(name="notas")
-public class Nota implements Serializable{
+public class Nota implements Serializable,Comparator<Nota>,Comparable<Nota>{
     
     private static final long serialVersionUID = 21L;
 
@@ -63,6 +64,16 @@ public class Nota implements Serializable{
 
     public void setContenido(String contenido) {
         this.contenido = contenido;
+    }
+
+    @Override
+    public int compareTo(Nota nota) {
+        return this.titulo.compareTo(nota.titulo);
+    }
+
+    @Override
+    public int compare(Nota nota1, Nota nota2) {
+        return Long.compare(nota1.getId() , nota2.getId());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.inforhomex.calculador.entity;
 
 import java.io.Serializable;
+import java.util.Comparator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.GenerationType;
 
 @Entity(name = "Empleado")
 @Table(name="empleados")
-public class Empleado implements Serializable{
+public class Empleado implements Serializable,Comparator<Empleado>,Comparable<Empleado>{
 
     private static final long serialVersionUID = 22L;
 
@@ -78,6 +79,16 @@ public class Empleado implements Serializable{
 
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    @Override
+    public int compareTo(Empleado emp) {
+        return this.nombre.compareTo(emp.nombre);
+    }
+
+    @Override
+    public int compare(Empleado emp1, Empleado emp2) {
+        return emp1.getId() - emp2.getId();
     }
 
     @Override
