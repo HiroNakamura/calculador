@@ -1,6 +1,7 @@
 package com.inforhomex.calculador.service;
 
 import com.inforhomex.calculador.model.MNota;
+import com.inforhomex.calculador.entity.Nota;
 import java.util.List;
 
 public interface INotaService{
