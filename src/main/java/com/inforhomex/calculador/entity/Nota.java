@@ -6,10 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import java.io.Serializable;
 
 @Entity(name="Nota")
 @Table(name="notas")
-public class Nota implements java.io.Serializable{
+public class Nota implements Serializable{
     
     private static final long serialVersionUID = 21L;
 
