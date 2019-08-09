@@ -1,10 +1,10 @@
 package com.inforhomex.calculador.service;
 
-import com.inforhomex.calculador.entity.Nota;
+import com.inforhomex.calculador.model.MNota;
 import java.util.List;
 
 public interface INotaService{
-    public abstract List<Nota> findNotasAll();
-    public abstract Nota findNotaById(Long id);
-    public abstract Nota crearNota(Nota nota);
+    public abstract List<MNota> findNotasAll();
+    public abstract MNota findNotaById(Long id);
+    public abstract MNota crearNota(MNota nota);
 }
