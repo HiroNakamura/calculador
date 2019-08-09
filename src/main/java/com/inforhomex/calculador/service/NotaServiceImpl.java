@@ -25,4 +25,12 @@ public class NotaServiceImpl implements INotaService{
     public Nota findNotaById(Long id){
         return notaRepository.findById(id).orElse(null);
     }
+    
+    @Override
+    @Transactional
+    public Nota crearNota(Nota nota){
+        return notaRepository.save(nota);
+    }
+    
+    
 }

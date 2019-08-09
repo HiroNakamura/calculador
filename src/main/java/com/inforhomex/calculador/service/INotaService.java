@@ -6,4 +6,5 @@ import java.util.List;
 public interface INotaService{
     public abstract List<Nota> findNotasAll();
     public abstract Nota findNotaById(Long id);
+    public abstract Nota crearNota(Nota nota);
 }
