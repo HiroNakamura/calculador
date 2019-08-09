@@ -15,5 +15,3 @@ INSERT INTO public.notas(nombre,titulo,contenido) VALUES ('Tirsio Gomora','Infor
 
 -- select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas order by notas.nombre;
 -- select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas;
--- select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas order by notas.nombre;
--- select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas;
