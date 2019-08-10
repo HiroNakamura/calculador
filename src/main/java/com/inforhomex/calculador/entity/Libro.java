@@ -4,7 +4,10 @@ package com.inforhomex.calculador.entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +28,24 @@ public class Libro implements Serializable{
 	private String isbn;
 
 	public Libro(){}
+
+	public Libro(Long id, String titulo, String isbn){
+		this.id=id;
+		this.titulo=titulo;
+		this.isbn=isbn;
+	}
+
+	@JoinColumn(name="autor_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Autor autor;
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
 
 	public Long getId() {
 		return id;
