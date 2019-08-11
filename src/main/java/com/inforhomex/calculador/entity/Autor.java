@@ -23,7 +23,7 @@ public class Autor implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
+	@Column(columnDefinition = "serial")
 	private Long id;
 
 	private String nombre;
