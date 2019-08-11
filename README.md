@@ -1,7 +1,7 @@
 # Calculador: Serie de ejercicios en Spring Boot (ahora es un proyecto REST y Batch)
 
 
-![Spring Boot con Maven](https://4.bp.blogspot.com/-sJ-Gp9H5Feg/UsrqFH5o4kI/AAAAAAAACBY/K6LK0cGLG5Q/s1600/progrJava.png)
+![Spring Boot con Maven](https://2.bp.blogspot.com/-7HqbqD5PNx8/XKLczkxqeDI/AAAAAAAAAE8/PadnAcp-SbIev5575wG002ELrN18qvrHACLcBGAs/s1600/laptop-1209008_960_720.jpg)
 
 
 
