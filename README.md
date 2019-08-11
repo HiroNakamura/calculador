@@ -56,7 +56,11 @@ http://localhost:8090/batch/empleados
 
 
 **Consultas**
-````
+
+Consultas SQL.
+
+
+```
  INSERT INTO public.empleados(nombre, apellido,depto, salario) VALUES('Juan','Lopez Lopez',1,23000.0);
 
 INSERT INTO public.empleados(nombre, apellido,depto, salario) VALUES('Mariana','Alcantara Villegas',2,25000.0);
