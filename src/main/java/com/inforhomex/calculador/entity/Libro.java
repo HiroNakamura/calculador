@@ -27,9 +27,12 @@ public class Libro implements Serializable{
 	private String titulo;
 	private String isbn;
 
-	public Libro(){}
+	public Libro(){
+		this.autor = new Autor();
+	}
 
 	public Libro(Long id, String titulo, String isbn){
+		super();
 		this.id=id;
 		this.titulo=titulo;
 		this.isbn=isbn;
