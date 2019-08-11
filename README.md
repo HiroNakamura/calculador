@@ -79,6 +79,11 @@ INSERT INTO public.empleados(nombre, apellido,depto, salario) VALUES('Adriana','
 
 SELECT autor.id, CONCAT(autor.nombre,' ',autor.apellido) as escritor, libro.titulo FROM public.autores AS autor INNER JOIN public.libros AS libro ON autor.id=libro.autor_id ;
 
+SELECT autor.id, CONCAT(autor.nombre,' ',autor.apellido) as escritor,
+ libro.titulo 
+ FROM public.autores AS autor 
+INNER JOIN public.libros AS libro 
+ON autor.id=libro.autor_id order by autor.nombre;
 
 select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas order by notas.nombre;
 
