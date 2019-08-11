@@ -6,15 +6,27 @@ import java.util.List;
 import com.inforhomex.calculador.entity.Autor;
 import com.inforhomex.calculador.entity.Nota;
 import com.inforhomex.calculador.entity.Libro;
-
-
+import com.inforhomex.calculador.entity.Empleado;
 import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MNota;
 import com.inforhomex.calculador.model.MLibro;
+import com.inforhomex.calculador.model.MEmpleado;
 
 
 @Component("convertidor")
 public class Convertidor{
+
+    public List<MEmpleado> getListaMEmpleado(List<Empleado> empleados){
+        List<MEmpleado> mempleados = new ArrayList<>();
+        empleados.forEach(empleado ->{
+            mempleados.add(new MEmpleado(empleado));
+        });
+        return mempleados;
+    }
+
+    public MEmpleado getEmpleado(Empleado empleado){
+        return new MEmpleado(empleado);
+    }
 
     public List<MLibro> getListaMLibro(List<Libro> libros){
         List<MLibro> mlibros = new ArrayList<>();

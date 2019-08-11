@@ -1,8 +1,6 @@
 package com.inforhomex.calculador.model;
 
-
 import java.io.Serializable;
-
 import com.inforhomex.calculador.entity.Libro;
 
 
