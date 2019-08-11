@@ -76,5 +76,13 @@ public class Autor implements Serializable{
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
+	@Override 
+	public String toString(){
+		if(libros.size() == 0){
+			return "Autor{id: "+id+",nombre:"+nombre+", apellido:"+apellido+"}";
+		}
+		return "Autor{id: "+id+",nombre:"+nombre+", apellido:"+apellido+", libros: "+libros.toString()+"}";
+	}
 	
 }

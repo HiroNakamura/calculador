@@ -74,5 +74,13 @@ public class Libro implements Serializable{
 		this.isbn = isbn;
 	}
 
+	@Override 
+	public String toString(){
+		if(autor == null){
+			return "Libro{id:"+id+", titulo:"+titulo+",isbn:"+isbn+"}";
+		}
+		return "Libro{id:"+id+", titulo:"+titulo+",isbn:"+isbn+", autor: "+autor+"}";
+	}
+
 	
 }
