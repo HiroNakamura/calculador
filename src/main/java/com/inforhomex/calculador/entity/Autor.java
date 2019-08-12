@@ -45,6 +45,14 @@ public class Autor implements Serializable,Comparable<Autor>, Comparator<Autor> 
 		this.nombre=nombre;
 		this.apellido=apellido;
 	}
+	
+	public Autor(Long id, String nombre, String apellido, List<Libro> libros){
+		super();
+		this.id=id;
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.libros=libros;
+	}
 
 	public List<Libro> getLibros() {
 		return libros;
