@@ -38,6 +38,14 @@ public class Libro implements Serializable,Comparable<Libro>, Comparator<Libro>{
 		this.titulo=titulo;
 		this.isbn=isbn;
 	}
+	
+	public Libro(Long id, String titulo, String isbn, Autor autor){
+		super();
+		this.id=id;
+		this.titulo=titulo;
+		this.isbn=isbn;
+		this.autor=autor;
+	}
 
 	@JoinColumn(name="autor_id")
 	@ManyToOne(fetch = FetchType.LAZY)
