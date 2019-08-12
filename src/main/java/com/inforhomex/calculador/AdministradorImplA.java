@@ -1,15 +1,15 @@
 package com.inforhomex.calculador;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class AdministradorImplA implements Administrador {
     @Override
     public String getFecha(){
         String resultado = "";
-        Date date = new Date();
+        LocalDate date = LocalDate.now();
         resultado += "Fecha de hoy es \n"+date.toString();
-        resultado += "\nDia "+getDia(date.getDay());
-        resultado += "\nHora "+date.getHours();
+        resultado += "\nDia "+getDia(date.getDayOfYear());
+        resultado += "\nMes "+date.getMonth();
         return resultado;
     }
 
