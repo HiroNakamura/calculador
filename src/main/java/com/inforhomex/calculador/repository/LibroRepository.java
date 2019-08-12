@@ -10,4 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface LibroRepository extends JpaRepository<Libro,Long>{
     @Query(value="SELECT autor.id, autor.nombre,autor.apellido, libro.titulo FROM public.libros AS libro INNER JOIN public.autores AS autor ON autor.id=libro.autor_id order by autor.nombre",nativeQuery=true)
     public List<Libro> getAllLibros();
+
+    @Query(value="SELECT * FROM public.libros AS libro WHERE libro.id = ?1",nativeQuery=true)
+    public Libro findLibroById(Long id);
 }
