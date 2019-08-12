@@ -26,6 +26,7 @@ public class MAutor implements Serializable,Comparable<MAutor>, Comparator<MAuto
         this.id=autor.getId();
         this.nombre = autor.getNombre();
         this.apellido = autor.getApellido();
+	this.libros = autor.getLibros();
     }
     
     public MAutor(Long id, String nombre, String apellido){
