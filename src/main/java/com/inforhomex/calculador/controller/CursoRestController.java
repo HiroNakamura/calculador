@@ -14,8 +14,9 @@ import java.util.List;
 
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
+import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MLibro;
-
+import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
 
 @CrossOrigin("*")
@@ -29,6 +30,10 @@ public class CursoRestController{
 	@Autowired
 	@Qualifier("libroService")
 	private ILibroService libroServiceImpl;
+
+	@Autowired
+	@Qualifier("autorService")
+	private IAutorService autorServiceImpl;
 
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
@@ -60,5 +65,19 @@ public class CursoRestController{
 	public MLibro getLibro(@PathVariable Long id){
 		return libroServiceImpl.findLibroById(id);
 	}
+
+	//http://localhost:8090/curso/autores
+	@GetMapping("/autores")
+	public List<MAutor> getAutores(){
+		return autorServiceImpl.getAutoresAll();
+	}
+
+	//http://localhost:8090/curso/autores/1
+	@GetMapping("/libros/{id}")
+	public MAutor getAutor(@PathVariable Long id){
+		return autorServiceImpl.findAutorById(id);
+		
+	}
+
 
 }
