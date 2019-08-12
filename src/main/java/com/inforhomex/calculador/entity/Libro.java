@@ -2,6 +2,7 @@ package com.inforhomex.calculador.entity;
 
 
 import java.io.Serializable;
+import java.util.Comparator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,7 +16,7 @@ import javax.persistence.GenerationType;
 
 @Table(name="libros")
 @Entity(name="Libro")
-public class Libro implements Serializable{
+public class Libro implements Serializable,Comparable<Libro>, Comparator<Libro>{
 
 	private static final long serialVersionUID = 15L;
 
@@ -73,6 +74,16 @@ public class Libro implements Serializable{
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+
+	@Override
+    public int compareTo(Libro libro) {
+        return this.titulo.compareTo(libro.titulo);
+	}
+	
+	@Override
+    public int compare(Libro libro1,Libro libro2) {
+        return Long.compare(libro1.getId() , libro2.getId());
+    }
 
 	@Override 
 	public String toString(){

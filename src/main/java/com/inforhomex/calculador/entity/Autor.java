@@ -3,6 +3,7 @@ package com.inforhomex.calculador.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,7 +18,7 @@ import javax.persistence.GenerationType;
 
 @Entity(name="Autor")
 @Table(name="autores")
-public class Autor implements Serializable{
+public class Autor implements Serializable,Comparable<Autor>, Comparator<Autor> {
 
 	private static final long serialVersionUID = 25L;
 
@@ -76,6 +77,16 @@ public class Autor implements Serializable{
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
+	@Override
+    public int compareTo(Autor autor) {
+        return this.nombre.compareTo(autor.nombre);
+	}
+	
+	@Override
+    public int compare(Autor autor1, Autor autor2) {
+        return Long.compare(autor1.getId() , autor2.getId());
+    }
 
 	@Override 
 	public String toString(){
