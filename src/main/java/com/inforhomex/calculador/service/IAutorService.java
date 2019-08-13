@@ -6,4 +6,5 @@ import com.inforhomex.calculador.model.MAutor;
 public interface IAutorService{
     public abstract List<MAutor> getAutoresAll();
     public abstract MAutor findAutorById(Long id);
+    public abstract MAutor createAutor(String nombre,String apellidos);
 }

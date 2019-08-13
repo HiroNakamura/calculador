@@ -16,9 +16,7 @@ public class AutorServiceImpl implements IAutorService{
     private AutorRepository autorRepository;
     
     @Autowired
-    private Convertidor convertidor;
-
-    
+    private Convertidor convertidor;    
 
     @Override 
     @Transactional(readOnly = true)
@@ -32,6 +30,12 @@ public class AutorServiceImpl implements IAutorService{
     @Transactional(readOnly = true)
     public MAutor findAutorById(Long id){
         Autor autor = autorRepository.findAutorById(id);
+        return convertidor.getAutor(autor);
+    }
+
+    @Override
+    public MAutor createAutor(String nombre,String apellidos){
+        Autor autor = autorRepository.createAutor(nombre, apellidos);
         return convertidor.getAutor(autor);
     }
 
