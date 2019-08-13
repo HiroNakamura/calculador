@@ -21,5 +21,5 @@ public interface AutorRepository extends JpaRepository<Autor,Long>{
     @Modifying
     @Transactional
     @Query(value="INSERT INTO public.autores(nombre,apellido) VALUES (:nombre,:apellido)",nativeQuery=true)
-    public Autor createAutor(@Param("nombre") String nombre,@Param("apellido") String apellidos);
+    public void createAutor(@Param("nombre") String nombre,@Param("apellido") String apellidos);
 }

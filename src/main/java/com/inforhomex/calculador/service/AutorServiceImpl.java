@@ -34,9 +34,8 @@ public class AutorServiceImpl implements IAutorService{
     }
 
     @Override
-    public MAutor createAutor(String nombre,String apellidos){
-        Autor autor = autorRepository.createAutor(nombre, apellidos);
-        return convertidor.getAutor(autor);
+    public void createAutor(String nombre,String apellidos){
+        autorRepository.createAutor(nombre, apellidos);
     }
 
 }

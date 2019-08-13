@@ -3,7 +3,8 @@ package com.inforhomex.calculador.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -84,10 +85,11 @@ public class CursoRestController{
 
 	//http://localhost:8090/curso/autores/create
 	@PostMapping("/autores/create")
-	public MAutor createAutor(@RequestBody Autor autor){
+	@ResponseBody
+	public void createAutor(@RequestBody Autor autor){
 		String nombre = autor.getNombre();
 		String apellido = autor.getApellido();
-		return autorServiceImpl.createAutor(nombre, apellido);
+		autorServiceImpl.createAutor(nombre, apellido);
 	}
 
 }
