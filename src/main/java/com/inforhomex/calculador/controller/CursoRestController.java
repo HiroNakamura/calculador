@@ -8,12 +8,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
+import com.inforhomex.calculador.entity.Autor;
 import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MLibro;
 import com.inforhomex.calculador.service.IAutorService;
@@ -78,5 +81,11 @@ public class CursoRestController{
 		return autorServiceImpl.findAutorById(id);
 	}
 
+	@PostMapping("/autores/create")
+	public MAutor createAutor(@RequestBody Autor autor){
+		String nombre = autor.getNombre();
+		String apellidos = autor.getApellido();
+		return autorServiceImpl.createAutor(nombre, apellidos);
+	}
 
 }
