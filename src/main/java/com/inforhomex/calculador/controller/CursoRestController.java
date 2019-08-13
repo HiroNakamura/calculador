@@ -85,8 +85,8 @@ public class CursoRestController{
 	@PostMapping("/autores/create")
 	public MAutor createAutor(@RequestBody Autor autor){
 		String nombre = autor.getNombre();
-		String apellidos = autor.getApellido();
-		return autorServiceImpl.createAutor(nombre, apellidos);
+		String apellido = autor.getApellido();
+		return autorServiceImpl.createAutor(nombre, apellido);
 	}
 
 }
