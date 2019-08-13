@@ -81,6 +81,7 @@ public class CursoRestController{
 		return autorServiceImpl.findAutorById(id);
 	}
 
+	//http://localhost:8090/curso/autores/create
 	@PostMapping("/autores/create")
 	public MAutor createAutor(@RequestBody Autor autor){
 		String nombre = autor.getNombre();
