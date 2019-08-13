@@ -30,4 +30,9 @@ public class LibroServiceImpl implements ILibroService{
         Libro libro = libroRepository.findLibroById(id);
         return convertidor.getLibro(libro);
     }
+
+    @Override
+    public void createLibro(String titulo,String isbn,Long autor_id){
+        libroRepository.createLibro(titulo,isbn,autor_id);
+    }
 }

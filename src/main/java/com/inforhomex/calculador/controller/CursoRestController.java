@@ -19,6 +19,7 @@ import java.util.List;
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
 import com.inforhomex.calculador.entity.Autor;
+import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MLibro;
 import com.inforhomex.calculador.service.IAutorService;
@@ -69,6 +70,16 @@ public class CursoRestController{
 	@GetMapping("/libros/{id}")
 	public MLibro getLibro(@PathVariable Long id){
 		return libroServiceImpl.findLibroById(id);
+	}
+
+	//http://localhost:8090/curso/libros/create
+	@PostMapping("/libros/create")
+	@ResponseBody
+	public void createLibro(@RequestBody Libro libro){
+		String titulo = libro.getTitulo();
+		String isbn = libro.getIsbn();
+		Long autor_id = libro.getAutor().getId();
+		libroServiceImpl.createLibro(titulo, isbn, autor_id);
 	}
 
 	//http://localhost:8090/curso/autores
