@@ -76,7 +76,6 @@ public class CursoRestController{
 	@GetMapping("/autores/{id}")
 	public MAutor getAutor(@PathVariable Long id){
 		return autorServiceImpl.findAutorById(id);
-		
 	}
 
 
