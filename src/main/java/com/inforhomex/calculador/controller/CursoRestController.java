@@ -73,7 +73,7 @@ public class CursoRestController{
 	}
 
 	//http://localhost:8090/curso/autores/1
-	@GetMapping("/libros/{id}")
+	@GetMapping("/autores/{id}")
 	public MAutor getAutor(@PathVariable Long id){
 		return autorServiceImpl.findAutorById(id);
 		
