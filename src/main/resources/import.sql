@@ -12,4 +12,4 @@ INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('Cain','',1);
 INSERT INTO public.autores(nombre,apellido) VALUES('Arturo','Perez Reverte');
 INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('El club Dumas','',2);
 INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('La Reina del Sur','',2);
-INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('La tbla de Flandes','',2);
+INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('La tabla de Flandes','',2);
