@@ -83,6 +83,13 @@ public class CursoRestController{
 		libroServiceImpl.createLibro(titulo, isbn, autor_id);
 	}
 
+	//http://localhost:8090/curso/libros/delete/1
+	@DeleteMapping("/libros/delete/{id}")
+	@ResponseBody
+	public void deleteLibro(@PathVariable Long id){
+		libroServiceImpl.deleteLibro(id);
+	}
+
 	//http://localhost:8090/curso/autores
 	@GetMapping("/autores")
 	public List<MAutor> getAutores(){

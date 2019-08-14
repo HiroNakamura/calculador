@@ -35,4 +35,12 @@ public class LibroServiceImpl implements ILibroService{
     public void createLibro(String titulo,String isbn,Long autor_id){
         libroRepository.createLibro(titulo,isbn,autor_id);
     }
+
+    @Override 
+    public void deleteLibro(Long id){
+        libroRepository.deleteLibro(id);
+    }
+
+
+
 }

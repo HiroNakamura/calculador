@@ -7,4 +7,5 @@ public interface ILibroService{
     public abstract List<MLibro> getLibrosAll();
     public abstract MLibro findLibroById(Long id);
     public abstract void createLibro(String titulo,String isbn,Long autor_id);
+    public abstract void deleteLibro(Long id);
 }

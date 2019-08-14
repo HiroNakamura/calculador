@@ -22,4 +22,10 @@ public interface LibroRepository extends JpaRepository<Libro,Long>{
     @Transactional
     @Query(value="INSERT INTO public.libros(titulo,isbn,autor_id) VALUES (:titulo,:isbn,:autor_id)",nativeQuery=true)
     public void createLibro(@Param("titulo") String titulo,@Param("isbn") String isbn,@Param("autor_id") Long autor_id);
+
+    @Modifying
+    @Transactional
+    @Query(value="DELETE FROM public.libros WHERE id = :id ",nativeQuery=true)
+    public void deleteLibro(@Param("id") Long id);
+
 }
