@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -101,6 +102,13 @@ public class CursoRestController{
 		String nombre = autor.getNombre();
 		String apellido = autor.getApellido();
 		autorServiceImpl.createAutor(nombre, apellido);
+	}
+
+	//http://localhost:8090/curso/autores/delete/1
+	@DeleteMapping("/autores/delete/{id}")
+	@ResponseBody
+	public void deleteAutor(@PathVariable Long id){
+		autorServiceImpl.deleteAutor(id);
 	}
 
 }

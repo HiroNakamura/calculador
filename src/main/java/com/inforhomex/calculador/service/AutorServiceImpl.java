@@ -38,4 +38,9 @@ public class AutorServiceImpl implements IAutorService{
         autorRepository.createAutor(nombre, apellidos);
     }
 
+    @Override
+    public void deleteAutor(Long id){
+        autorRepository.deleteAutor(id);
+    }
+
 }

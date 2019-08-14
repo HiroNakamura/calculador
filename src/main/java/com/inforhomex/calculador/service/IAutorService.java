@@ -7,4 +7,5 @@ public interface IAutorService{
     public abstract List<MAutor> getAutoresAll();
     public abstract MAutor findAutorById(Long id);
     public abstract void createAutor(String nombre,String apellidos);
+    public abstract void deleteAutor(Long id);
 }
