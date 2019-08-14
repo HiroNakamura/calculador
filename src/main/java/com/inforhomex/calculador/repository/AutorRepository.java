@@ -29,4 +29,9 @@ public interface AutorRepository extends JpaRepository<Autor,Long>{
     @Query(value="DELETE FROM public.libros WHERE autor_id = :id ; DELETE FROM public.autores WHERE id = :id ",nativeQuery=true)
     public void deleteAutor(@Param("id") Long id);
 
+    @Modifying
+    @Transactional 
+    @Query(value="UPDATE public.autores SET nombre = :nombre, apellido = :apellido  WHERE id = :id",nativeQuery=true)
+    public Autor updateAutor(@Param("id") Long id,@Param("nombre") String nombre,@Param("apellido") String apellido);
+
 }

@@ -28,4 +28,10 @@ public interface LibroRepository extends JpaRepository<Libro,Long>{
     @Query(value="DELETE FROM public.libros WHERE id = :id ",nativeQuery=true)
     public void deleteLibro(@Param("id") Long id);
 
+    @Modifying
+    @Transactional 
+    @Query(value="UPDATE public.libros SET titulo = :titulo, isbn = :isbn, autor_id = :autor_id  WHERE id = :id",nativeQuery=true)
+    public Libro updateLibro(@Param("id") Long id,@Param("titulo") String titulo,@Param("isbn") String isn, @Param("autor_id")Long autor_id);
+
+
 }
