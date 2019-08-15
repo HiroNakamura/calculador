@@ -143,9 +143,13 @@ public class CursoRestController{
 	//http://localhost:8090/curso/autores/update/1
 	@PutMapping("/autores/update/{id}")
 	@ResponseBody
-	public void updateAutor(@PathVariable("id") Long id,@PathVariable("nombre") String nombre,@PathVariable("apellido") String apellido){
+	public void updateAutor(@PathVariable("id") Long id,@RequestBody Autor autor){
 		LOG.info("Has entrado a http://localhost:8090/curso/autores/update/"+id);
-		autorServiceImpl.updateAutor(id, nombre, apellido);
+		MAutor mautor = new MAutor(autor);
+		if(autorServiceImpl.findAutorById(mautor.getId()) !=null){
+			LOG.info("Existe el autor a editar!!");
+			autorServiceImpl.updateAutor(mautor.getId(), mautor.getNombre(), mautor.getApellido());
+		}
 	}
 
 
