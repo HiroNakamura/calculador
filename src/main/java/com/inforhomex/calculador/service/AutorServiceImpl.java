@@ -46,13 +46,13 @@ public class AutorServiceImpl implements IAutorService{
     @Override
     public MAutor updateAutor(Long id, String nombre, String apellido){
         Autor autorEncontrado = autorRepository.findAutorById(id);
-        MAutor autor = null;
+        MAutor mautor = null;
         if(autorEncontrado != null && autorRepository.existsById(id)){
             autorEncontrado.setNombre(nombre);
             autorEncontrado.setApellido(apellido);
             autorRepository.save(autorEncontrado);
-            autor = new MAutor(autorEncontrado);
-            return autor;
+            mautor = new MAutor(autorEncontrado);
+            return mautor;
         }
         return null;
     }

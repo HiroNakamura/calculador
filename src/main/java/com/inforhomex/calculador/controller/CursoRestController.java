@@ -143,7 +143,7 @@ public class CursoRestController{
 	//http://localhost:8090/curso/autores/update/1
 	@PutMapping("/autores/update/{id}")
 	@ResponseBody
-	public MAutor updateAutor(@PathVariable("id") Long id,@PathVariable("nombre") String nombre,@PathVariable("apellido") String apellido, @RequestBody Autor autor){
+	public MAutor updateAutor(@PathVariable("id") Long id,@PathVariable("nombre") String nombre,@PathVariable("apellido") String apellido){
 		LOG.info("Has entrado a http://localhost:8090/curso/autores/update/"+id);
 		return autorServiceImpl.updateAutor(id, nombre, apellido);
 	}
