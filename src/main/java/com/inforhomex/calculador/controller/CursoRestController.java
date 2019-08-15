@@ -107,6 +107,18 @@ public class CursoRestController{
 		libroServiceImpl.deleteLibro(id);
 	}
 
+	//http://localhost:8090/curso/libros/update/1
+	@PutMapping("/libros/update/{id}")
+	@ResponseBody
+	public void updateLibro(@PathVariable("id") Long id,@RequestBody Libro libro){
+		LOG.info("Has entrado a http://localhost:8090/curso/libros/update/"+id);
+		MLibro mlibro = new MLibro(libro);
+		if(libroServiceImpl.findLibroById(mlibro.getId()) !=null){
+			LOG.info("Existe el libro a editar!!");
+			libroServiceImpl.updateLibro(mlibro.getId(), mlibro.getTitulo(), mlibro.getIsbn(),mlibro.getAutor().getId());
+		}
+	}
+
 	//http://localhost:8090/curso/autores
 	@GetMapping("/autores")
 	public List<MAutor> getAutores(){

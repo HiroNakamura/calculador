@@ -41,6 +41,12 @@ public class LibroServiceImpl implements ILibroService{
         libroRepository.deleteLibro(id);
     }
 
-
+    @Override 
+    public void updateLibro(Long id,String titulo,String isbn,Long autor_id){
+        Libro libroEncontrado = libroRepository.findLibroById(id);
+        if(libroEncontrado != null && libroRepository.existsById(id)){
+            libroRepository.updateLibro(id, titulo,isbn,autor_id);
+        }
+    }
 
 }
