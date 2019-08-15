@@ -1,5 +1,6 @@
 package com.inforhomex.calculador.controller;
 
+import com.inforhomex.calculador.entity.Nota;
 import com.inforhomex.calculador.model.MNota;
 import com.inforhomex.calculador.service.NotaServiceImpl;
 
@@ -7,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.http.HttpStatus;
@@ -64,6 +67,21 @@ public class NotaRestController{
         }
 
         return new ResponseEntity<Map<String,Object>>(response, HttpStatus.OK);
+    }
+
+    //http://localhost:8090/curso/notas/create
+    @PostMapping("/notas/create")
+    public ResponseEntity<?> crearNota(@RequestBody Nota nota){
+        MNota mnota = null;
+        Map<String,Object> response = new HashMap<>();
+        try{
+            mnota = notaServiceImpl.crearNota(nota);
+        }catch(DataAccessException e){
+            response.put("mensaje", "Error al realizar la consulta en la base de datos");
+            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CREATED);
     }
 
     

@@ -38,6 +38,12 @@ public class NotaServiceImpl implements INotaService{
         MNota mnota = new MNota(notaRepository.save(nota));
         return mnota;
     }
+
+    @Override 
+    @Transactional 
+    public void deleteNota(Long id){
+        
+    }
     
     
 }
