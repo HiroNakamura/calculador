@@ -8,5 +8,5 @@ public interface IAutorService{
     public abstract MAutor findAutorById(Long id);
     public abstract void createAutor(String nombre,String apellidos);
     public abstract void deleteAutor(Long id);
-    public abstract MAutor updateAutor(Long id, String nombre, String apellido);
+    public abstract void updateAutor(Long id, String nombre, String apellido);
 }
