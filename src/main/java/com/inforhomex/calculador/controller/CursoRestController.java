@@ -32,7 +32,7 @@ import com.inforhomex.calculador.service.ILibroService;
 @RequestMapping("/curso")
 public class CursoRestController{
 
-	private static final Logger LOG = LoggerFactory.getLogger(ClienteRestController.class); 
+	private static final Logger LOG = LoggerFactory.getLogger(CursoRestController.class); 
 
 
 	@Autowired

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.dao.DataAccessException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -23,6 +25,9 @@ import java.util.HashMap;
 @RestController
 @RequestMapping("/curso")
 public class NotaRestController{
+
+    private static final Logger LOG = LoggerFactory.getLogger(NotaRestController.class); 
+
     
     @Autowired
     private NotaServiceImpl notaServiceImpl;
@@ -31,12 +36,14 @@ public class NotaRestController{
     //http://localhost:8090/curso/notas
     @GetMapping("/notas")
     public List<MNota> notas(){
+        LOG.info("Has entrado a http://localhost:8090/curso/notas");
         return notaServiceImpl.findNotasAll();
     }
     
     //http://localhost:8090/curso/notas/1
     @GetMapping("/notas/{id}")
     public ResponseEntity<?> nota(@PathVariable Long id){
+        LOG.info("Has entrado a http://localhost:8090/curso/notas/"+id);
         
         MNota mnota = null;
         Map<String,Object> response = new HashMap<>();
