@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
 import com.inforhomex.calculador.entity.Autor;
@@ -30,6 +31,9 @@ import com.inforhomex.calculador.service.ILibroService;
 @RestController
 @RequestMapping("/curso")
 public class CursoRestController{
+
+	private static final Logger LOG = LoggerFactory.getLogger(ClienteRestController.class); 
+
 
 	@Autowired
 	private MensajesServicioImpl mensajesServicioImpl;
@@ -45,12 +49,14 @@ public class CursoRestController{
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
 	public String index(){
+		LOG.info("Has entrado a http://localhost:8090/curso/index");
 		return new String(LocalDateTime.now()+"; Bienvenidos al curso Spring Boot, MongoDb y Javascript");
 	}
 
 	//http://localhost:8090/curso/mensajes
 	@GetMapping("/mensajes")
 	public List<Mensajes> getMensajes(){
+		LOG.info("Has entradao a http://localhost:8090/curso/mensajes");
 		return mensajesServicioImpl.getTodo();
 	}
 
@@ -58,18 +64,21 @@ public class CursoRestController{
 	@GetMapping("/mensaje/{idioma}")
 	public Mensajes getMensajeOne(@PathVariable("idioma") String idioma){
 		System.out.println("Idioma: "+idioma);
+		LOG.info("Has entrado a http://localhost:8090/curso/mensaje/"+idioma);
 		return mensajesServicioImpl.getMensaje(idioma);
 	}
 
 	//http://localhost:8090/curso/libros
 	@GetMapping("/libros")
 	public List<MLibro> getLibros(){
+		LOG.info("Has entrado a http://localhost:8090/curso/libros");
 		return libroServiceImpl.getLibrosAll();
 	}
 
 	//http://localhost:8090/curso/libros/1
 	@GetMapping("/libros/{id}")
 	public MLibro getLibro(@PathVariable Long id){
+		LOG.info("Has entrado a http://localhost:8090/curso/libros/"+id);
 		return libroServiceImpl.findLibroById(id);
 	}
 
@@ -80,6 +89,8 @@ public class CursoRestController{
 		String titulo = libro.getTitulo();
 		String isbn = libro.getIsbn();
 		Long autor_id = libro.getAutor().getId();
+		LOG.info("Has entrado a http://localhost:8090/curso/libros/create");
+		LOG.info(libro.toString());
 		libroServiceImpl.createLibro(titulo, isbn, autor_id);
 	}
 
@@ -87,18 +98,21 @@ public class CursoRestController{
 	@DeleteMapping("/libros/delete/{id}")
 	@ResponseBody
 	public void deleteLibro(@PathVariable Long id){
+		LOG.info("Has entrado a http://localhost:8090/curso/libros/delete/"+id);
 		libroServiceImpl.deleteLibro(id);
 	}
 
 	//http://localhost:8090/curso/autores
 	@GetMapping("/autores")
 	public List<MAutor> getAutores(){
+		LOG.info("Has entrado a http://localhost:8090/curso/autores");
 		return autorServiceImpl.getAutoresAll();
 	}
 
 	//http://localhost:8090/curso/autores/1
 	@GetMapping("/autores/{id}")
 	public MAutor getAutor(@PathVariable Long id){
+		LOG.info("Has entrado a http://localhost:8090/curso/autores/"+id);
 		return autorServiceImpl.findAutorById(id);
 	}
 
@@ -108,6 +122,8 @@ public class CursoRestController{
 	public void createAutor(@RequestBody Autor autor){
 		String nombre = autor.getNombre();
 		String apellido = autor.getApellido();
+		LOG.info("Has entrado a http://localhost:8090/curso/autores/create");
+		LOG.info(autor.toString());
 		autorServiceImpl.createAutor(nombre, apellido);
 	}
 
@@ -115,6 +131,7 @@ public class CursoRestController{
 	@DeleteMapping("/autores/delete/{id}")
 	@ResponseBody
 	public void deleteAutor(@PathVariable Long id){
+		LOG.info("Has entrado a http://localhost:8090/curso/autores/delete/"+id);
 		autorServiceImpl.deleteAutor(id);
 	}
 
