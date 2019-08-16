@@ -42,7 +42,7 @@ public class NotaServiceImpl implements INotaService{
     @Override 
     @Transactional 
     public void deleteNota(Long id){
-        
+        notaRepository.deleteById(id);
     }
     
     

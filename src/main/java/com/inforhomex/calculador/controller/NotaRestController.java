@@ -1,14 +1,17 @@
 package com.inforhomex.calculador.controller;
 
+import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.entity.Nota;
 import com.inforhomex.calculador.model.MNota;
 import com.inforhomex.calculador.service.NotaServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -76,6 +79,26 @@ public class NotaRestController{
         Map<String,Object> response = new HashMap<>();
         try{
             mnota = notaServiceImpl.crearNota(nota);
+            response.put("nota",mnota);
+        }catch(DataAccessException e){
+            response.put("mensaje", "Error al realizar la consulta en la base de datos");
+            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<Map<String,Object>>(response, HttpStatus.CREATED);
+    }
+
+    //http://localhost:8090/curso/notas/delete/1
+    @DeleteMapping("/notas/delete/{id}")
+    public ResponseEntity<?> deleteNota(@PathVariable("id")Long id, @RequestBody Libro libro){
+        MNota mnota = null;
+        Map<String,Object> response = new HashMap<>();
+        try{
+            mnota = notaServiceImpl.findNotaById(id);
+            if(mnota !=null){
+                notaServiceImpl.deleteNota(id);
+            }
+            response.put("nota",mnota);
         }catch(DataAccessException e){
             response.put("mensaje", "Error al realizar la consulta en la base de datos");
             response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
