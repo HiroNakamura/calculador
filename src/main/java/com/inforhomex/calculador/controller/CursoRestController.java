@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +40,8 @@ public class CursoRestController{
 
 	private static final Logger LOG = LoggerFactory.getLogger(CursoRestController.class); 
 
+	@Value("${programador.aplicacion}")
+    private String nombre;
 
 	@Autowired
 	private MensajesServicioImpl mensajesServicioImpl;
@@ -55,7 +58,8 @@ public class CursoRestController{
 	@GetMapping("/index")
 	public String index(){
 		LOG.info("Has entrado a http://localhost:8090/curso/index");
-		return new String(LocalDateTime.now()+"; Bienvenidos al curso Spring Boot, MongoDb y Javascript");
+		LOG.info("Nombre aplicación: "+nombre);
+		return new String(LocalDateTime.now()+"; Bienvenidos al curso Spring Boot, MongoDb y Javascript: "+nombre);
 	}
 
 	//http://localhost:8090/curso/mensajes

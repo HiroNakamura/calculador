@@ -1,9 +1,11 @@
 package com.inforhomex.calculador;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,14 +14,22 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 //import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @SpringBootApplication
-public class CalculadorApplication {
+public class CalculadorApplication implements CommandLineRunner {
+
+	private static final Logger LOG = LoggerFactory.getLogger(CalculadorApplication.class);
 
 
 	public static void main(String[] args) {
+		LOG.info("La aplicación CalculadorApplication esta ejecutandose...\n"+LocalDateTime.now());
 		SpringApplication.run(CalculadorApplication.class, args);
+		LOG.info("La aplicación CalculadorApplication ha finalizado...\n"+LocalDateTime.now());
+		
+		
 		//testA(args);
 		//testB();
 		//testC();
@@ -38,6 +48,12 @@ public class CalculadorApplication {
 		//testP();
 		//testQ();
 		//testR();
+	}
+
+
+	@Override
+    public void run(String ... args){
+		LOG.info("Esto servira para algo...");
 	}
 
 	public static void testR(){
