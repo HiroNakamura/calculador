@@ -30,9 +30,6 @@ import com.inforhomex.calculador.model.MLibro;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
 
-
-
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/curso")
