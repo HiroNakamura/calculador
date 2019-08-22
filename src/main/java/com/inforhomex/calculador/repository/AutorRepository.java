@@ -32,6 +32,6 @@ public interface AutorRepository extends JpaRepository<Autor,Long>{
     @Modifying
     @Transactional 
     @Query(value="UPDATE public.autores SET nombre = :nombre, apellido = :apellido  WHERE id = :id",nativeQuery=true)
-    public Autor updateAutor(@Param("id") Long id,@Param("nombre") String nombre,@Param("apellido") String apellido);
+    public void updateAutor(@Param("id") Long id,@Param("nombre") String nombre,@Param("apellido") String apellido);
 
 }

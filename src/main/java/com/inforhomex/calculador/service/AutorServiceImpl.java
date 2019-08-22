@@ -43,4 +43,12 @@ public class AutorServiceImpl implements IAutorService{
         autorRepository.deleteAutor(id);
     }
 
+    @Override
+    public void updateAutor(Long id, String nombre, String apellido){
+        Autor autorEncontrado = autorRepository.findAutorById(id);
+        if(autorEncontrado != null && autorRepository.existsById(id)){
+            autorRepository.updateAutor(id, nombre, apellido);
+        }
+    }
+
 }

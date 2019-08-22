@@ -77,6 +77,21 @@ public class Nota implements Serializable,Comparator<Nota>,Comparable<Nota>{
     }
 
     @Override
+	public int hashCode() {
+		return id = null? id.hashCode() : 0;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Nota nota = (Nota) o;
+
+        return id != null ? id.equals(nota.id) : nota.id == null;
+    }
+
+    @Override
     public String toString(){
         return "Nota{ id = "+id+", nombre = "+nombre+", tiulo = "+titulo+", contenido = "+contenido+"}";
     }

@@ -31,7 +31,6 @@ public interface LibroRepository extends JpaRepository<Libro,Long>{
     @Modifying
     @Transactional 
     @Query(value="UPDATE public.libros SET titulo = :titulo, isbn = :isbn, autor_id = :autor_id  WHERE id = :id",nativeQuery=true)
-    public Libro updateLibro(@Param("id") Long id,@Param("titulo") String titulo,@Param("isbn") String isn, @Param("autor_id")Long autor_id);
-
+    public void updateLibro(@Param("id") Long id,@Param("titulo") String titulo,@Param("isbn") String isbn, @Param("autor_id")Long autor_id);
 
 }

@@ -8,4 +8,5 @@ public interface INotaService{
     public abstract List<MNota> findNotasAll();
     public abstract MNota findNotaById(Long id);
     public abstract MNota crearNota(Nota nota);
+    public abstract void deleteNota(Long id); 
 }

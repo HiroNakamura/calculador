@@ -91,7 +91,22 @@ public class Libro implements Serializable,Comparable<Libro>, Comparator<Libro>{
 	@Override
     public int compare(Libro libro1,Libro libro2) {
         return Long.compare(libro1.getId() , libro2.getId());
+	}
+
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Libro libro = (Libro) o;
+
+        return id != null ? id.equals(libro.id) : libro.id == null;
     }
+	
+	@Override
+	public int hashCode() {
+		return id = null? id.hashCode() : 0;
+	}
 
 	@Override 
 	public String toString(){

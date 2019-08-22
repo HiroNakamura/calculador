@@ -92,6 +92,21 @@ public class Empleado implements Serializable,Comparator<Empleado>,Comparable<Em
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Empleado emp = (Empleado) o;
+
+        return id != null ? id.equals(emp.id) : emp.id == null;
+    }
+
+    @Override
+	public int hashCode() {
+		return id = null? id.hashCode() : 0;
+	}
+
+    @Override
     public String toString(){
         return "Empleado{ id:"+id+",nombre:"+nombre+ ",apellido: "+apellido+",departamento: "+departamento+",salario: "+salario+"}";
     }
