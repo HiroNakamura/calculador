@@ -6,14 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+//import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
+//import com.mongodb.MongoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
