@@ -96,11 +96,7 @@ public class Autor implements Serializable,Comparable<Autor>, Comparator<Autor> 
         return Long.compare(autor1.getId() , autor2.getId());
 	}
 	
-	@Override
-	public int hashCode() {
-		return id = null? id.hashCode() : 0;
-	}
-
+	
 	@Override
     public boolean equals(Object o) {
         if (this == o) return true;

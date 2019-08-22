@@ -103,10 +103,6 @@ public class Libro implements Serializable,Comparable<Libro>, Comparator<Libro>{
         return id != null ? id.equals(libro.id) : libro.id == null;
     }
 	
-	@Override
-	public int hashCode() {
-		return id = null? id.hashCode() : 0;
-	}
 
 	@Override 
 	public String toString(){

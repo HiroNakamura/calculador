@@ -76,10 +76,6 @@ public class Nota implements Serializable,Comparator<Nota>,Comparable<Nota>{
         return Long.compare(nota1.getId() , nota2.getId());
     }
 
-    @Override
-	public int hashCode() {
-		return id = null? id.hashCode() : 0;
-    }
     
     @Override
     public boolean equals(Object o) {

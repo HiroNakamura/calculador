@@ -101,10 +101,7 @@ public class Empleado implements Serializable,Comparator<Empleado>,Comparable<Em
         return id != null ? id.equals(emp.id) : emp.id == null;
     }
 
-    @Override
-	public int hashCode() {
-		return id = null? id.hashCode() : 0;
-	}
+    
 
     @Override
     public String toString(){
