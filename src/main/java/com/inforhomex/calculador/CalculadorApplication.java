@@ -12,6 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
+
+import com.inforhomex.calculador.controller.CursoController;
+
 //import com.mongodb.MongoException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +24,16 @@ import org.slf4j.LoggerFactory;
 public class CalculadorApplication implements CommandLineRunner {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CalculadorApplication.class);
-
-
 	public static void main(String[] args) {
 		LOG.info("La aplicación CalculadorApplication esta ejecutandose...\n"+LocalDateTime.now());
-		SpringApplication.run(CalculadorApplication.class, args);
+		//SpringApplication.run(CalculadorApplication.class, args);
+		ApplicationContext context = SpringApplication.run(CalculadorApplication.class, args);
+		CursoController cursoController = (CursoController) context.getBean("cursoController");
+		System.out.println(cursoController.aplicacion("Billy Mortell"));
+		System.out.println(context.getBean(CursoController.class).aplicacion("John Callager"));
 		LOG.info("La aplicación CalculadorApplication ha finalizado...\n"+LocalDateTime.now());
 		
+		//new  CalculadorApplication().run(args);
 		
 		//testA(args);
 		//testB();
