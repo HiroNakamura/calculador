@@ -13,3 +13,8 @@ INSERT INTO public.autores(nombre,apellido) VALUES('Arturo','Perez Reverte');
 INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('El club Dumas','',2);
 INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('La Reina del Sur','',2);
 INSERT INTO public.libros(titulo,isbn,autor_id) VALUES('La tabla de Flandes','',2);
+
+
+INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Hugo','Navarro',2,22000.0);
+INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Irene','Almodovar',1,26000.0);
+INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Xavier','Jimenez',4,15500.0);

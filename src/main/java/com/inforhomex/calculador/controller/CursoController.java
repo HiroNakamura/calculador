@@ -8,11 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.Date;
-
 import com.inforhomex.calculador.service.ISaludoService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
