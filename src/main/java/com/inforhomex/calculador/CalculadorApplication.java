@@ -33,7 +33,8 @@ public class CalculadorApplication implements CommandLineRunner {
 		System.out.println(context.getBean(CursoController.class).aplicacion("John Callager"));
 		LOG.info("La aplicación CalculadorApplication ha finalizado...\n"+LocalDateTime.now());
 		
-		//new  CalculadorApplication().run(args);
+		String[] nombres={"La gata mas barata","El general Arteaga","La insoportable vacuidad del Señor Fantoche"};
+		new  CalculadorApplication().run(nombres);
 		
 		//testA(args);
 		//testB();
@@ -59,6 +60,10 @@ public class CalculadorApplication implements CommandLineRunner {
 	@Override
     public void run(String ... args){
 		LOG.info("Esto servira para algo...");
+		for(String arg : args){
+			System.out.println(arg);
+			LOG.info("#"+arg);
+		}
 	}
 
 	public static void testR(){
