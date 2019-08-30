@@ -65,6 +65,16 @@ var Test = {
         .catch(e=>{
             console.error("Ha ocurrido un error en el servidor");
         })
+        
+        fetch('http://localhost:8090/curso/empleados').then(response => response.json())
+        .then(empleados =>{
+            for(var empleado in empleados){
+                console.log('Nombre: ',empleados[empleado].nombre);
+            }
+        })
+        .catch(e=>{
+            console.error("Ha ocurrido un error en el servidor");
+        })
 
 
     }
