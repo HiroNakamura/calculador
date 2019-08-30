@@ -19,13 +19,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
 import com.inforhomex.calculador.entity.Autor;
+import com.inforhomex.calculador.entity.Empleado;
 import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.model.MAutor;
+import com.inforhomex.calculador.model.MEmpleado;
 import com.inforhomex.calculador.model.MLibro;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
@@ -50,6 +54,9 @@ public class CursoRestController{
 	@Autowired
 	@Qualifier("autorService")
 	private IAutorService autorServiceImpl;
+
+
+
 
 	//http://localhost:8090/curso/index
 	@GetMapping("/index")
@@ -163,6 +170,12 @@ public class CursoRestController{
 			LOG.info("Existe el autor a editar!!");
 			autorServiceImpl.updateAutor(mautor.getId(), mautor.getNombre(), mautor.getApellido());
 		}
+	}
+
+	//http://localhost:8090/curso/empleados
+	@GetMapping("/empleados")
+	public Set<MEmpleado> getEmpleados(){
+		return null;
 	}
 
 
