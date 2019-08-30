@@ -31,6 +31,7 @@ import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MEmpleado;
 import com.inforhomex.calculador.model.MLibro;
+import com.inforhomex.calculador.service.EmpleadoServiceImpl;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
 
@@ -42,20 +43,23 @@ public class CursoRestController{
 	private static final Logger LOG = LoggerFactory.getLogger(CursoRestController.class); 
 
 	@Value("${programador.aplicacion}")
-    private String nombre;
+    public String nombre;
 
 	@Autowired
-	private MensajesServicioImpl mensajesServicioImpl;
+	public MensajesServicioImpl mensajesServicioImpl;
 
 	@Autowired
 	@Qualifier("libroService")
-	private ILibroService libroServiceImpl;
+	public ILibroService libroServiceImpl;
 
 	@Autowired
 	@Qualifier("autorService")
-	private IAutorService autorServiceImpl;
+	public IAutorService autorServiceImpl;
 
 
+	@Autowired
+	@Qualifier("empleadoServiceImpl")
+	public EmpleadoServiceImpl empleadoServiceImpl;
 
 
 	//http://localhost:8090/curso/index
