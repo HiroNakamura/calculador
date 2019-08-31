@@ -13,7 +13,7 @@ import org.springframework.data.repository.query.Param;
 @Repository("autorRepository")
 public interface AutorRepository extends JpaRepository<Autor,Long>{
     
-    @Query(value="SELECT * FROM public.autores",nativeQuery=true)
+    @Query(value="SELECT autor.id, autor.nombre, autor.apellido FROM public.autores as autor",nativeQuery=true)
     public List<Autor> getAllAutores();
 
     @Query(value="SELECT * FROM public.autores AS autor WHERE autor.id = ?1",nativeQuery=true)
