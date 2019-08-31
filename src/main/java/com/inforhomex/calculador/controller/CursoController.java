@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Date;
 
 import com.inforhomex.calculador.service.EmpleadoServiceImpl;
+import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ISaludoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,6 +40,11 @@ public class CursoController{
     public EmpleadoServiceImpl empleadoServiceImpl;
 
 
+    @Autowired
+    @Qualifier("autorService")
+    public IAutorService autorServiceImpl;
+
+
     public String aplicacion(String nombre){
         LOG.info("Esto se ejecutara en el main...");
         return saludoService.decirHola(nombre);
@@ -47,7 +53,7 @@ public class CursoController{
     //http://localhost:8090/calculador/index
     @GetMapping("/index")
     public String index(Model model){
-        LOG.info("Has entrado a http://localhost:8090/calculador/index");
+        LOG.info("Hemos entrado a http://localhost:8090/calculador/index");
         model.addAttribute("nombre", nombre);
         model.addAttribute("fecha", fecha);
         return "index";
@@ -56,13 +62,16 @@ public class CursoController{
     //http://localhost:8090/calculador/autores
     @GetMapping("/autores")
     public ModelAndView getAutores(){
+        LOG.info("Hemos entrado a http://localhost:8090/calculador/autores");
         ModelAndView mav = new ModelAndView("autores");
+        mav.addObject("autores", autorServiceImpl.getAutoresAll());
         return mav;
     }
 
     //http://localhost:8090/calculador/empleados
     @GetMapping("/empleados")
     public ModelAndView getEmpleados(){
+        LOG.info("Hemos entrado a http://localhost:8090/calculador/empleados");
         ModelAndView mav = new ModelAndView("empleados");
         mav.addObject("empleados", empleadoServiceImpl.findAll());
         return mav;

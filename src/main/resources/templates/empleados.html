@@ -13,7 +13,29 @@
 <h1>
     Empleados
 </h1>
-<span th:text="${empleados.size()>0}">Hay empleados</span>
+<div th:if="${!empleados.isEmpty()}">
+    <span>Hay empleados</span>
+    <table>
+            <thead >
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Departamento</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="emp : ${empleados}">
+                    <td th:text="${emp?.id}"></td>
+                    <td th:text="${emp?.nombre}"></td>
+                    <td th:text="${emp?.apellido}"></td>
+                    <td th:text="${emp?.departamento}"></td>
+                    <td th:text="${emp?.salario}"></td>
+                </tr>
+            </tbody>
+    </table>
+</div>
 <!--<div th:include="layout/footer"></div>-->
 </body>
 </html>

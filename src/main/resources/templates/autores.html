@@ -13,6 +13,25 @@
 <h1>
     Autores
 </h1>
+<div th:if="${!autores.isEmpty()}">
+    <span>Hay autores</span>
+    <table>
+            <thead >
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="autor : ${autores}">
+                    <td th:text="${autor?.id}"></td>
+                    <td th:text="${autor?.nombre}"></td>
+                    <td th:text="${autor?.apellido}"></td>
+                </tr>
+            </tbody>
+    </table>
+</div>
 <!--<div th:include="layout/footer"></div>-->
 </body>
 </html>
