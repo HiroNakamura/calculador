@@ -8,7 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.util.Date;
+
+import com.inforhomex.calculador.service.EmpleadoServiceImpl;
 import com.inforhomex.calculador.service.ISaludoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +32,12 @@ public class CursoController{
 
     @Autowired
     @Qualifier("saludoServiceImpl")
-    private ISaludoService saludoService;
+    public ISaludoService saludoService;
+
+
+    @Autowired
+    public EmpleadoServiceImpl empleadoServiceImpl;
+
 
     public String aplicacion(String nombre){
         LOG.info("Esto se ejecutara en el main...");
@@ -42,6 +51,21 @@ public class CursoController{
         model.addAttribute("nombre", nombre);
         model.addAttribute("fecha", fecha);
         return "index";
+    }
+
+    //http://localhost:8090/calculador/autores
+    @GetMapping("/autores")
+    public ModelAndView getAutores(){
+        ModelAndView mav = new ModelAndView("autores");
+        return mav;
+    }
+
+    //http://localhost:8090/calculador/empleados
+    @GetMapping("/empleados")
+    public ModelAndView getEmpleados(){
+        ModelAndView mav = new ModelAndView("empleados");
+        mav.addObject("empleados", empleadoServiceImpl.findAll());
+        return mav;
     }
 
 }
