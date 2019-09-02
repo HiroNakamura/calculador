@@ -29,11 +29,9 @@
                     <td th:text="${autor?.id}"></td>
                     <td th:text="${autor?.nombre}"></td>
                     <td th:text="${autor?.apellido}"></td>
-                    <td>
-                        <ul th:each="libro : ${autor.libros}">
-                            <li th:text="libro?.titulo"></li>
-                            <li th:text="libro?.isbn"></li>
-                        </ul>
+                    <td th:each="libro : ${autor.libros}">
+                        <span th:text="libro?.titulo"/>
+                        <span th:text="libro?.isbn"/>
                     </td>
                 </tr>
             </tbody>

@@ -11,9 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 //import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 //import org.springframework.beans.factory.annotation.Autowired;
+import java.util.ArrayList;
 import java.util.List;
-
 import com.inforhomex.calculador.controller.CursoController;
+import com.inforhomex.calculador.entity.Autor;
+import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.service.AutorServiceImpl;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
@@ -42,6 +44,23 @@ public class CalculadorApplication implements CommandLineRunner {
 		autorService.createAutor("Doris", "Lessing");
 		ILibroService libroService = (LibroServiceImpl) context.getBean("libroService");
 		libroService.createLibro("Las Abuelas", "No disponible", 3L);
+
+		Autor autor = new Autor();
+		Libro libro = new Libro();
+		List<Libro> misLibros = new ArrayList<>();
+
+		libro.setId(5L);
+		libro.setAutor(null);
+		libro.setTitulo("Perdido en Venus");
+		libro.setIsbn("343-443-765");
+		misLibros.add(libro);
+
+		autor.setId(4L);
+		autor.setNombre("Yung");
+		autor.setApellido("Yugulin");
+		autor.setLibros(misLibros);
+
+		
 
 
 		String[] nombres={"La gata mas barata","El general Arteaga","La insoportable vacuidad del Señor Fantoche"};
