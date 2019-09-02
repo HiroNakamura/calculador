@@ -22,27 +22,36 @@ public class AutorCrudService implements CrudService<Autor, Long>{
 	@Override
 	@Transactional(readOnly = true)
 	public Set<Autor> findAll(){
-		return null;
+		List<Autor> listaAutores = autorRepository.findAll();
+        Set<Autor> autors = new HashSet<>();
+        listaAutores.forEach(autor->{
+            autors.add(autor);
+        });
+        return autors;
 	}
 
 	@Override
+    @Transactional(readOnly = true)
 	public Autor findById(Long id){
-		return null;
+		return autorRepository.getOne(id);
 	}
 
 	@Override
+	@Transactional
 	public Autor save(Autor object){
-		return null;
+		return autorRepository.save(object);
 	}
 
 	@Override
+	@Transactional
 	public void delete(Autor object){
-
+		autorRepository.delete(object);
 	}
 
 	@Override
+	@Transactional
 	public void deleteById(Long id){
-
+		autorRepository.deleteById(id);
 	}
 
 }
