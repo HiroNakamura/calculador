@@ -50,22 +50,31 @@ public class CalculadorApplication implements CommandLineRunner {
 		Libro libro = new Libro();
 		List<Libro> misLibros = new ArrayList<>();
 
-		libro.setId(5L);
+		//libro.setId(5L);
 		libro.setAutor(null);
 		libro.setTitulo("Perdido en Venus");
 		libro.setIsbn("343-443-765");
 		misLibros.add(libro);
 
-		autor.setId(4L);
+		//autor.setId(4L);
 		autor.setNombre("Yung");
 		autor.setApellido("Yugulin");
 		autor.setLibros(misLibros);
 
 		AutorCrudService autorCrudSertvice = (AutorCrudService) context.getBean("autorCrudService");
-		Autor autorCreado = autorCrudSertvice.save(autor);
-		if(autorCreado != null){
-			System.out.println("Se ha creado autor: "+autorCreado.getNombre().concat(" ").concat(autorCreado.getApellido()));
+		
+		try{
+			Autor autorCreado = autorCrudSertvice.save(autor);
+			if(autorCreado != null){
+				System.out.println("Se ha creado autor: "
+					+autorCreado.getNombre().concat(" ").concat(autorCreado.getApellido()));
+			}
+		}catch(RuntimeException ex){
+			System.err.println("Ha ourrido una RuntimeException: "+ex.toString());
+		}finally{
+			System.out.println("Ha finalizado el codigo!!");
 		}
+		
 
 		
 
