@@ -16,6 +16,7 @@ import java.util.List;
 import com.inforhomex.calculador.controller.CursoController;
 import com.inforhomex.calculador.entity.Autor;
 import com.inforhomex.calculador.entity.Libro;
+import com.inforhomex.calculador.service.AutorCrudService;
 import com.inforhomex.calculador.service.AutorServiceImpl;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
@@ -59,6 +60,12 @@ public class CalculadorApplication implements CommandLineRunner {
 		autor.setNombre("Yung");
 		autor.setApellido("Yugulin");
 		autor.setLibros(misLibros);
+
+		AutorCrudService autorCrudSertvice = (AutorCrudService) context.getBean("autorCrudService");
+		Autor autorCreado = autorCrudSertvice.save(autor);
+		if(autorCreado != null){
+			System.out.println("Se ha creado autor: "+autorCreado.getNombre().concat(" ").concat(autorCreado.getApellido()));
+		}
 
 		
 
