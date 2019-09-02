@@ -24,6 +24,13 @@ public class AutorServiceImpl implements IAutorService{
         List<Autor> autores = autorRepository.getAllAutores();
         return convertidor.getListaMAutor(autores);
     }
+    
+    @Override 
+    @Transactional(readOnly = true)
+    public List<MAutor> getAutoresTodo(){
+        List<Autor> autores = autorRepository.findAll();
+        return convertidor.getListaMAutor(autores);
+    }
 
 
     @Override 
