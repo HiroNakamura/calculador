@@ -14,6 +14,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.List;
 
 import com.inforhomex.calculador.controller.CursoController;
+import com.inforhomex.calculador.service.AutorServiceImpl;
+import com.inforhomex.calculador.service.IAutorService;
+import com.inforhomex.calculador.service.ILibroService;
+import com.inforhomex.calculador.service.LibroServiceImpl;
 
 //import com.mongodb.MongoException;
 import org.slf4j.Logger;
@@ -33,6 +37,13 @@ public class CalculadorApplication implements CommandLineRunner {
 		System.out.println(context.getBean(CursoController.class).aplicacion("John Callager"));
 		LOG.info("La aplicación CalculadorApplication ha finalizado...\n"+LocalDateTime.now());
 		
+
+		IAutorService autorService = (AutorServiceImpl) context.getBean("autorService");
+		autorService.createAutor("Doris", "Lessing");
+		ILibroService libroService = (LibroServiceImpl) context.getBean("libroService");
+		libroService.createLibro("Las Abuelas", "No disponible", 3L);
+
+
 		String[] nombres={"La gata mas barata","El general Arteaga","La insoportable vacuidad del Señor Fantoche"};
 		new  CalculadorApplication().run(nombres);
 		
