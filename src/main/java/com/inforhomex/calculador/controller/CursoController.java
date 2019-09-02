@@ -64,7 +64,8 @@ public class CursoController{
     public ModelAndView getAutores(){
         LOG.info("Hemos entrado a http://localhost:8090/calculador/autores");
         ModelAndView mav = new ModelAndView("autores");
-        mav.addObject("autores", autorServiceImpl.getAutoresAll());
+        //mav.addObject("autores", autorServiceImpl.getAutoresAll());
+        mav.addObject("autores", autorServiceImpl.getAutoresTodo());
         return mav;
     }
 
