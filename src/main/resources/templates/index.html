@@ -14,6 +14,12 @@
     <span th:text="${nombre}"></span>
 </h1>
 <span th:text="${fecha}"></span>
+    <div>
+        <ul>
+            <li> <a th:href="@{/empleados}" target="_blank">Empleados</a></li>
+            <li> <a th:href="@{/autores}" target="_blank">Autores</a></li>
+        </ul>
+    </div>
 <!--<div th:include="layout/footer"></div>-->
 </body>
 </html>
