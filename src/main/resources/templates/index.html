@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta http-equiv="x-ua-compatible" content="ie-edge"/>  
         <title>::Calculador Spring::</title>
-        <!--<th:block th:include="layout/header"></th:block>-->
+        <th:block th:include="layout/header"></th:block>
         <link rel="stylesheet" href="">
         <script src=""></script>
     </head>
@@ -16,10 +16,10 @@
 <span th:text="${fecha}"></span>
     <div>
         <ul>
-            <li> <a th:href="@{/empleados}" target="_blank">Empleados</a></li>
-            <li> <a th:href="@{/autores}" target="_blank">Autores</a></li>
+            <li> <a th:href="@{/calculador/empleados}" target="_blank">Empleados</a></li>
+            <li> <a th:href="@{/calculador/autores}" target="_blank">Autores</a></li>
         </ul>
     </div>
-<!--<div th:include="layout/footer"></div>-->
+<div th:include="layout/footer"></div>
 </body>
 </html>
