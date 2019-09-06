@@ -12,14 +12,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
 <body>
-<h1>
+<h1 class="text-primary">
     <span th:text="${nombre}"></span>
 </h1>
 <span th:text="${fecha}"></span>
-    <div>
-        <ul>
-            <li> <a th:href="@{/calculador/empleados}" target="_blank">Empleados</a></li>
-            <li> <a th:href="@{/calculador/autores}" target="_blank">Autores</a></li>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"> <a class="nav-link" th:href="@{/calculador/empleados}" target="_blank">Empleados</a></li>
+            <li class="nav-item"> <a class="nav-link" th:href="@{/calculador/autores}" target="_blank">Autores</a></li>
         </ul>
     </div>
 <div th:include="layout/footer"></div>
