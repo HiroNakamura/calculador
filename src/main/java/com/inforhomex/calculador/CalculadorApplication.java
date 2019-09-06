@@ -21,6 +21,10 @@ import com.inforhomex.calculador.service.AutorServiceImpl;
 import com.inforhomex.calculador.service.IAutorService;
 import com.inforhomex.calculador.service.ILibroService;
 import com.inforhomex.calculador.service.LibroServiceImpl;
+import com.inforhomex.calculador.service.QuijoteService;
+import com.inforhomex.calculador.service.QuijoteServiceImpl;
+import com.inforhomex.calculador.model.QuijoteFrases;
+import com.inforhomex.calculador.config.QuijoteConfiguration;
 
 //import com.mongodb.MongoException;
 import org.slf4j.Logger;
@@ -74,6 +78,11 @@ public class CalculadorApplication implements CommandLineRunner {
 		}finally{
 			System.out.println("Ha finalizado el codigo!!");
 		}
+
+
+		ApplicationContext ctxQuijote = new AnnotationConfigApplicationContext(QuijoteConfiguration.class);
+		QuijoteService objQuijote = (QuijoteServiceImpl) ctxQuijote.getBean("quijoteServiceBean");
+		System.out.println("La frase cabalistica del Quijote de La Mancha del día de hoy es: "+objQuijote.getFrase());
 		
 
 		
