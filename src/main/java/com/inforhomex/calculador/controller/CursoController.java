@@ -51,7 +51,7 @@ public class CursoController{
     }
 
     //http://localhost:8090/calculador/index
-    @GetMapping("/index")
+    @GetMapping({"/","/index","index.html"})
     public String index(Model model){
         LOG.info("Hemos entrado a http://localhost:8090/calculador/index");
         model.addAttribute("nombre", nombre);
