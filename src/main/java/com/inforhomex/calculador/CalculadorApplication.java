@@ -35,6 +35,8 @@ import org.slf4j.LoggerFactory;
 public class CalculadorApplication implements CommandLineRunner {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CalculadorApplication.class);
+	
+
 	public static void main(String[] args) {
 		LOG.info("La aplicación CalculadorApplication esta ejecutandose...\n"+LocalDateTime.now());
 		//SpringApplication.run(CalculadorApplication.class, args);
