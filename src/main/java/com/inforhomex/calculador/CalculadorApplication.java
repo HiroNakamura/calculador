@@ -25,6 +25,7 @@ import com.inforhomex.calculador.service.QuijoteService;
 import com.inforhomex.calculador.service.QuijoteServiceImpl;
 import com.inforhomex.calculador.model.QuijoteFrases;
 import com.inforhomex.calculador.config.QuijoteConfiguration;
+import com.inforhomex.calculador.model.FakeDataSource;
 
 //import com.mongodb.MongoException;
 import org.slf4j.Logger;
@@ -89,6 +90,15 @@ public class CalculadorApplication implements CommandLineRunner {
 
 		String[] nombres={"La gata mas barata","El general Arteaga","La insoportable vacuidad del Señor Fantoche"};
 		new  CalculadorApplication().run(nombres);
+
+
+		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
+		LOG.info("#Usuario fake: "+fakeDataSource.getUser());
+		LOG.info("#Clave fake: "+fakeDataSource.getPassword());
+		LOG.info("#Url fake: "+fakeDataSource.getUrl());
+		System.out.println("#Usuario fake: "+fakeDataSource.getUser());
+		System.out.println("#Clave fake: "+fakeDataSource.getPassword());
+		System.out.println("#Url fake: "+fakeDataSource.getUrl());
 		
 		//testA(args);
 		//testB();
