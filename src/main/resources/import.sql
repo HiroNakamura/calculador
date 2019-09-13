@@ -19,6 +19,3 @@ INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Hugo'
 INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Irene','Almodovar',1,26000.0);
 INSERT INTO public.empleados(nombre,apellido,departamento,salario) VALUES('Xavier','Jimenez',4,15500.0);
 
-
-CREATE TABLE public.modelos(id serial PRIMARY KEY, nombre varchar(150) not null);
-
