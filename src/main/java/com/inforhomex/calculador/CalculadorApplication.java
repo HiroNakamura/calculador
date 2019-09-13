@@ -85,10 +85,7 @@ public class CalculadorApplication implements CommandLineRunner {
 		ApplicationContext ctxQuijote = new AnnotationConfigApplicationContext(QuijoteConfiguration.class);
 		QuijoteService objQuijote = (QuijoteServiceImpl) ctxQuijote.getBean("quijoteServiceBean");
 		System.out.println("La frase cabalistica del Quijote de La Mancha del día de hoy es: "+objQuijote.getFrase());
-		
-
-		
-
+		System.out.println("La frase cabalistica del Quijote de La Mancha del día de hoy es: "+objQuijote.getFrase());
 
 		String[] nombres={"La gata mas barata","El general Arteaga","La insoportable vacuidad del Señor Fantoche"};
 		new  CalculadorApplication().run(nombres);

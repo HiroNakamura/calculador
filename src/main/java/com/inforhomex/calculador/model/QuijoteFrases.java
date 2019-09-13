@@ -1,5 +1,6 @@
 package com.inforhomex.calculador.model;
 
+import java.util.Random;
 
 public final class QuijoteFrases{
 
@@ -13,7 +14,7 @@ public final class QuijoteFrases{
 
 	
 	public String getFrases(){
-		return FRASE[(int)Math.random()*4];
+		return FRASE[new Random().nextInt(4)];
 	}
 
 }
