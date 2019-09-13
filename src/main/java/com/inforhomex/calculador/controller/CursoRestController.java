@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.inforhomex.calculador.Mensajes;
 import com.inforhomex.calculador.MensajesServicioImpl;
 import com.inforhomex.calculador.entity.Autor;
-import com.inforhomex.calculador.entity.Empleado;
+//import com.inforhomex.calculador.entity.Empleado;
 import com.inforhomex.calculador.entity.Libro;
 import com.inforhomex.calculador.model.MAutor;
 import com.inforhomex.calculador.model.MEmpleado;
