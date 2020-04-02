@@ -1,9 +1,10 @@
 package com.inforhomex.calculador.services;
 
 import com.inforhomex.calculador.entity.Pais;
-import com.inforhomex.batches.repository.PaisRepository;
+import com.inforhomex.calculador.repository.PaisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.inforhomex.calculador.service.CrudService;
 
 import java.util.HashSet;
 import java.util.List;
