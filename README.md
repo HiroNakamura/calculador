@@ -12,6 +12,7 @@
 **Instalar**
 
 ```
+$ mvn -version
 $ mvn clean install
 ```
 
@@ -60,7 +61,7 @@ http://localhost:8090/batch/empleados
 Consultas SQL.
 
 
-```
+```java
  INSERT INTO public.empleados(nombre, apellido,depto, salario) VALUES('Juan','Lopez Lopez',1,23000.0);
 
 INSERT INTO public.empleados(nombre, apellido,depto, salario) VALUES('Mariana','Alcantara Villegas',2,25000.0);
@@ -90,3 +91,10 @@ select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from
 select notas.titulo, notas.nombre as autor,notas.contenido, now() as fecha  from public.notas as notas;
 
 ```
+
+
+Links:
+
+* [Página oficial Spring Framework](https://spring.io/)
+
+
