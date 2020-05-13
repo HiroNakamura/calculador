@@ -1,4 +1,4 @@
-package com.inforhomex.calculador.services;
+package com.inforhomex.calculador.service;
 
 import com.inforhomex.calculador.entity.Pais;
 import com.inforhomex.calculador.repository.PaisRepository;
